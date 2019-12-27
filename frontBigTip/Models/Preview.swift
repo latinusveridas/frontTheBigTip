@@ -1,5 +1,12 @@
+//
+//  Preview.swift
+//  TheBigTip_0.0.0
+//
+//  Created by Quentin Duquesne on 02/01/2020.
+//  Copyright © 2020 Quentin Duquesne. All rights reserved.
+//
+
 import Foundation
-import SwiftUI
 
 struct Preview: Codable {
 /* Represent a thumbnailLink object */
@@ -13,6 +20,7 @@ struct Preview: Codable {
     
     // Variable data
     var tipNb: Int
+    var priceTip: Int
     
     init(previewId: String, authorId: String, authorName: String, thumbnailLink: String, tipVideoId: String, tipNb: Int) {
         self.previewId = previewId

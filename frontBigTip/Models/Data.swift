@@ -6,12 +6,12 @@
 //  Copyright © 2020 Quentin Duquesne. All rights reserved.
 //
 
-import UIKit
-import SwiftUI
+import Foundation
 
 let previewData: [Preview] = {
     guard let data = loadJSONfile(url: "previewData.json") else { print("No data loaded") }
     guard let previewList = ParsingJSONtoListPreview(data: data) else { print("No preview list created") }
+    print(previewList)
     return previewList
 }
 
@@ -30,7 +30,6 @@ func ParsingJSONtoListPreview(data: Data) -> [Preview] {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let previewsList = try decoder.decode([Preview].self, from: data)
-        print(previewsList)
         return previewsList
     } catch {
         print(error)
