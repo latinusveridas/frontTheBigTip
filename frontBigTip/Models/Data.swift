@@ -8,42 +8,48 @@
 
 import Foundation
 
-let previewData: [Preview] = {
+class sharedPreviewData {
 
-    // Preview Serialization
-    guard let data = loadJSONfile(url: "previewData.json") else { print("No data loaded") }
-    guard let previewList = ParsingJSONtoListPreview(data: data) else { print("No preview list created") }
-    print(previewList)
-    
-    // Thumbnail caching
-    let cacheThumbnails = NSCache<NSString, UIImage>()
-    cacheThumbnails.name = "Preview Thumbnails Cache"
-    
-    for preview in previewList {
-        preview.loadThumbnailImage(cache: cacheThumbnails)
+    let previewList: [Preview] = {
+        guard let data = loadJSONfile(url: "previewData.json") else { print("No data loaded") }
+        guard let previewList = ParsingJSONtoListPreview(data: data) else { print("No preview list created") }
+        print(previewList)
+        
+        return previewList
     }
     
-    return previewList
-}
-
-func loadJSONfile(url: url) -> Data {
-/* Load File to Data */
-
-    let url = Bundle.main.url(forResource: url, withExtension: "json")!
-    guard let data = try! Data(contentsOf: url, using: .utf8) else { fatalError("☠️") }
-    return data
-}
-
-func ParsingJSONtoListPreview(data: Data) -> [Preview] {
-/* Serialize JSON to List of Preview objects */
-
-    do {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let previewsList = try decoder.decode([Preview].self, from: data)
-        return previewsList
-    } catch {
-        print(error)
+    let cacheThumbnails: NSCache = {
+        let cacheThumbnails = NSCache<NSString, UIImage>()
+        cacheThumbnails.name = "Preview Thumbnails Cache"
+        
+        for preview in previewList {
+            preview.loadThumbnailImage(cache: cacheThumbnails)
+        }
+        
+        return cacheThumbnails
+            
     }
     
+    fileprivate func loadJSONfile(url: url) -> Data {
+    /* Load File to Data */
+    
+        let url = Bundle.main.url(forResource: url, withExtension: "json")!
+        guard let data = try! Data(contentsOf: url, using: .utf8) else { fatalError("☠️") }
+        return data
+    }
+    
+    fileprivate func ParsingJSONtoListPreview(data: Data) -> [Preview] {
+    /* Serialize JSON to List of Preview objects */
+    
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let previewsList = try decoder.decode([Preview].self, from: data)
+            return previewsList
+        } catch {
+            print(error)
+        }
+        
+    }
+
 }
