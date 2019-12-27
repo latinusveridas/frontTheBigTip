@@ -9,9 +9,20 @@
 import Foundation
 
 let previewData: [Preview] = {
+
+    // Preview Serialization
     guard let data = loadJSONfile(url: "previewData.json") else { print("No data loaded") }
     guard let previewList = ParsingJSONtoListPreview(data: data) else { print("No preview list created") }
     print(previewList)
+    
+    // Thumbnail caching
+    let cacheThumbnails = NSCache<NSString, UIImage>()
+    cacheThumbnails.name = "Preview Thumbnails Cache"
+    
+    for preview in previewList {
+        preview.loadThumbnailImage(cache: cacheThumbnails)
+    }
+    
     return previewList
 }
 
