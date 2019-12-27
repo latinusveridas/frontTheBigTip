@@ -23,5 +23,5 @@ let previewData = sharedPreviewData.previewList
 struct PreviewList_Previews: PreviewProvider {
     static var previews: some View {
         PreviewList()
-    }
+}
 }
