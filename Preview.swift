@@ -1,4 +1,7 @@
-class preview {
+import Foundation
+import SwiftUI
+
+class Preview: Codable {
 /* Represent a thumbnailLink object */
 
     // Static data
@@ -20,7 +23,7 @@ class preview {
         self.tipNb = tipNb
     }
     
-    func createPreview() {
+    func createPreview(authorId: String, authorName: String, thumbnailLink: String, tipVideoId: String, tipNb: Int) {
         self.previewId = generateId()
         self.authorId = authorId
         self.authorName = authorName
@@ -37,7 +40,13 @@ class preview {
         
     }
     
-    private func generateId() {
-        
+    private func generateId() -> String {
+        return "test"
+    }
+}
+
+extension Preview {
+    var thumbnailImage: Image {
+        ImageStore.shared.image(name: thumbnailLink)
     }
 }

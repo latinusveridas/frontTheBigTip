@@ -1,0 +1,18 @@
+[
+    {
+        "previewId": "id1_preview"
+        "authorId": "author1"
+        "authorName": "Quentin"
+        "thumbnailLink": "video1Thumb"
+        "tipVideoId": "id2_tipVideo"
+        "tipNb": "4"
+    },
+    {
+        "previewId": "id2_preview"
+        "authorId": "author2"
+        "authorName": "Katia"
+        "thumbnailLink": "video2Thumb"
+        "tipVideoId": "id2_tipVideo"
+        "tipNb": "5"
+    }
+]
