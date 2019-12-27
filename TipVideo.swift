@@ -1,4 +1,4 @@
-class TipVideo {
+struct TipVideo {
 /* Represent a video object */
 
     // Static data

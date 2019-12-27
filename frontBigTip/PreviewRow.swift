@@ -24,7 +24,12 @@ struct PreviewRow: View {
 
 struct PreviewRow_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewRow(preview: previewData[0])
+        Group {
+        PreviewRow(preview: previewData[0])    
+        PreviewRow(preview: previewData[1])
+        }
+        .previewLayout(.fixed(width: 300, height: 70))
+        
     }
 }
 

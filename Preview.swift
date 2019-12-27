@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-class Preview: Codable {
+struct Preview: Codable {
 /* Represent a thumbnailLink object */
 
     // Static data

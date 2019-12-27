@@ -11,9 +11,14 @@ import SwiftUI
 
 struct PreviewList: View {
     var body: some View {
-        List {
-            PreviewRow(preview: previewData[0])
-            PreviewRow(preview: previewData[1])
+        List(previewData, id: \.previewId) { preview in
+            PreviewRow(preview: preview)
         }
+    }
+}
+
+struct PreviewList_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewList()
     }
 }

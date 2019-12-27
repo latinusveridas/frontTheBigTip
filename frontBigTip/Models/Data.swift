@@ -1,60 +1,39 @@
+//
+//  DataProcessing.swift
+//  TheBigTip_0.0.0
+//
+//  Created by Quentin Duquesne on 02/01/2020.
+//  Copyright © 2020 Quentin Duquesne. All rights reserved.
+//
+
 import UIKit
 import SwiftUI
 
-let previewData: [Preview] = load("previewData.json")
+let previewData: [Preview] = {
+    guard let data = loadJSONfile(url: "previewData.json") else { print("No data loaded") }
+    guard let previewList = ParsingJSONtoListPreview(data: data) else { print("No preview list created") }
+    return previewList
+}
 
-func load<T: Decodable>(_ filename: String) -> T {
-    let data: Data
-    
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-        else {
-            fatalError("Couldn't find \(filename) in main bundle.")
-    }
-    
-    do {
-        data = try Data(contentsOf: file)
-    } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-    }
-    
+func loadJSONfile(url: url) -> Data {
+/* Load File to Data */
+
+    let url = Bundle.main.url(forResource: url, withExtension: "json")!
+    guard let data = try! Data(contentsOf: url, using: .utf8) else { fatalError("☠️") }
+    return data
+}
+
+func ParsingJSONtoListPreview(data: Data) -> [Preview] {
+/* Serialize JSON to List of Preview objects */
+
     do {
         let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let previewsList = try decoder.decode([Preview].self, from: data)
+        print(previewsList)
+        return previewsList
     } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        print(error)
     }
+    
 }
-
-final class ImageStore {
-    typealias _ImageDictionary = [String: CGImage]
-    fileprivate var images: _ImageDictionary = [:]
-
-    fileprivate static var scale = 2
-    
-    static var shared = ImageStore()
-    
-    func image(name: String) -> Image {
-        let index = _guaranteeImage(name: name)
-        
-        return Image(images.values[index], scale: CGFloat(ImageStore.scale), label: Text(verbatim: name))
-    }
-
-    static func loadImage(name: String) -> CGImage {
-        guard
-            let url = Bundle.main.url(forResource: name, withExtension: "jpg"),
-            let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
-            let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
-        else {
-            fatalError("Couldn't load image \(name).jpg from main bundle.")
-        }
-        return image
-    }
-    
-    fileprivate func _guaranteeImage(name: String) -> _ImageDictionary.Index {
-        if let index = images.index(forKey: name) { return index }
-        
-        images[name] = ImageStore.loadImage(name: name)
-        return images.index(forKey: name)!
-    }
-}
-
