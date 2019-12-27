@@ -13,48 +13,47 @@ struct Preview: Codable {
 
     // Static data
     var previewId: String
-    var authorId: String
-    var authorName: String
+    var authorId: String // Common w/ TipVideo
+    var authorName: String // Common w/ TipVideo
     var thumbnailLink: String
-    var tipVideoId: String
+    var thumbnailImage: Image?
+    var tipVideo: TipVideo
     
     // Variable data
-    var tipNb: Int
-    var priceTip: Int
+    var tipNb: Int // Common w/ TipVideo
+    var priceTip: Int // Common w/ TipVideo
     
-    init(previewId: String, authorId: String, authorName: String, thumbnailLink: String, tipVideoId: String, tipNb: Int) {
+    init(previewId: String, authorId: String, authorName: String, thumbnailLink: String, tipVideo: TipVideo, tipNb: Int, priceTip: Int) {
         self.previewId = previewId
         self.authorId = authorId
         self.authorName = authorName
         self.thumbnailLink = thumbnailLink
-        self.tipVideoId = tipVideoId
+        self.tipVideo = TipVideo
         self.tipNb = tipNb
+        self.priceTip = priceTip
     }
     
-    func createPreview(authorId: String, authorName: String, thumbnailLink: String, tipVideoId: String, tipNb: Int) {
-        self.previewId = generateId()
-        self.authorId = authorId
-        self.authorName = authorName
-        self.thumbnailLink = thumbnailLink
-        self.tipVideoId = tipVideoId
-        self.tipNb = 0        
-    }
+    func loadThumbnailImage(cache: NSCache) {
+    /* Caching image from bundle */
     
-    func updatethumbnailLink() {
+        let link = self.thumbnailLink
+        guard let url = Bundle.main.url(forResource: link, withExtension: "png") else { print("URL not found")}
+        guard let data = try! Data(contentsOf: url, using: .utf8) else { fatalError("☠️") }
         
+        guard let img = UIImage(data: data) else { print("Image has not been loaded") }
+        cache.setObject(img, forKey: self.previewId)
     }
     
-    func updateTipNb() {
-        
+    func downloadThumbnailImage() {
+    /* Caching image from URL */
+    
+    }
+    
+    func updatethumbnailLink(newLink: String) {
+        self.thumbnailLink = newLink
     }
     
     private func generateId() -> String {
         return "test"
-    }
-}
-
-extension Preview {
-    var thumbnailImage: Image {
-        ImageStore.shared.image(name: thumbnailLink)
     }
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct TipVideo {
+struct TipVideo: Codable {
 /* Represent a video object */
 
     // Static data
-    var previewId: String
+    var preview: Preview? // Preview is set as optionnal as we init first TipVideo then the Preview
     var tipVideoId: String
     var authorName: String
     var authorId: String
@@ -23,32 +23,25 @@ struct TipVideo {
     var priceTip: Int // Represent the price of 1 tip
     
     // Global data
-    var tipsList: [Tip] // Represent the total nb of tips, all users included
-    var totalTipsNb = tipsList.count
-    var totalIncome = totalTipsNb * priceTip
+    var tipsList: [Tip?] // Represent the total nb of tips, all users included
+    var totalTipsNb: Int
+    var totalIncome: Int
     
-    init(previewId: String, tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int) {
-        self.previewId = previewId
+    init(preview: Preview, tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, totalTipsNb: Int, totalIncome: Int) {
+        self.preview = Preview
         self.tipVideoId = tipVideoId
         self.authorName = authorName
         self.authorId = authorId
         self.tipNb = tipNb
         self.maxTip = maxTip
         self.priceTip = priceTip
+        self.totalTipsNb = totalTipsNb
+        self.totalIncome = totalIncome
     }
     
-    func createTipVideo(previewId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int) {
-        self.previewId = previewId
-        self.tipVideoId = generateId()
-        self.authorName = authorName
-        self.authorId = authorId
-        self.tipNb = 0
-        self.maxTip = maxTip
-        self.priceTip = priceTip
-    }
-    
-    func updateTipNb() {
-        
+    func updateTipVideo() {
+        self.totalTipsNb = self.tipsList.count
+        self.totalIncome = self.totalTipsNb * self.priceTip
     }
     
     private func generateId() -> String {
