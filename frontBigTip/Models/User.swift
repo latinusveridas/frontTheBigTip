@@ -11,15 +11,24 @@ import Foundation
 struc User {
 /* Represent a user object */
 
+    // Static data
     var userId: String
     var login: String
     var email: String
     var password : String
     
-    init(userId: String, login: String, email: String, password: String) {
+    // Variable data
+    var tipVideoList: [TipVideo?]
+    var tipsList: [Tip?]
+    
+    // Coins data
+    var remainingCoins: Int
+    
+    init(userId: String, login: String, email: String, password: String, remainingCoins: Int) {
         self.userId = userId
         self.login = login  
         self.email = email
         self.password = password
+        self.remainingCoins = remainingCoins
     }
 }

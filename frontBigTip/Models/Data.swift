@@ -11,7 +11,7 @@ import Foundation
 class sharedPreviewData {
 
     let previewList: [Preview] = {
-        guard let data = loadJSONfile(url: "previewData.json") else { print("No data loaded") }
+        guard let data = loadJSONfile(url: "previewData") else { print("No data loaded") }
         guard let previewList = ParsingJSONtoListPreview(data: data) else { print("No preview list created") }
         print(previewList)
         

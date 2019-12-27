@@ -10,6 +10,9 @@ import Foundation
 import SwiftUI
 
 struct PreviewList: View {
+
+let previewData = sharedPreviewData.previewList
+
     var body: some View {
         List(previewData, id: \.previewId) { preview in
             PreviewRow(preview: preview)

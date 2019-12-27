@@ -22,13 +22,4 @@ struct Tip: Codable {
         self.tipVideo = TipVideo
         self.user = User
     }
-    
-    func Tipped() {
-        /* This function is launch when the user had tiped */
-        /* As the Tip instance is already created on init, only TipVideo object is amended */
-        
-        self.tipVideo.tipsList.append(self) // Add tip in the TipList of related TipVideo Object
-        self.tipVideo.updateTipVideo() // Update
-    }
-    
 }
