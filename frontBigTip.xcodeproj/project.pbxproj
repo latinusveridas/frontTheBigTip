@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0039E4F623B3DCA1004C93C3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4F523B3DCA1004C93C3 /* Data.swift */; };
+		0039E4F623B3DCA1004C93C3 /* previewDataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4F523B3DCA1004C93C3 /* previewDataHandling.swift */; };
 		0039E4F923B3DD87004C93C3 /* previewData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0039E4F823B3DD87004C93C3 /* previewData.json */; };
 		0039E4FB23B4CF72004C93C3 /* PreviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4FA23B4CF72004C93C3 /* PreviewList.swift */; };
 		0094122423B12D4B0034780B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094122323B12D4B0034780B /* AppDelegate.swift */; };
@@ -17,6 +17,25 @@
 		0094123023B12D4D0034780B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0094122E23B12D4D0034780B /* LaunchScreen.storyboard */; };
 		0094123B23B12D4D0034780B /* frontBigTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094123A23B12D4D0034780B /* frontBigTipTests.swift */; };
 		0094124623B12D4D0034780B /* frontBigTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094124523B12D4D0034780B /* frontBigTipUITests.swift */; };
+		00B9F02523B810D100EF9FF9 /* currentUserHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9F02423B810D100EF9FF9 /* currentUserHandling.swift */; };
+		00B9F02623B89A5D00EF9FF9 /* currentUserHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9F02423B810D100EF9FF9 /* currentUserHandling.swift */; };
+		00B9F02723B89A5E00EF9FF9 /* currentUserHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9F02423B810D100EF9FF9 /* currentUserHandling.swift */; };
+		00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
+		00BD7E5423B7411E00DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
+		00BD7E5523B7411E00DA6EB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* User.swift */; };
+		00BD7E5623B749F500DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
+		00BD7E5723B749F500DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
+		00BD7E5823B749F500DA6EB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* User.swift */; };
+		00BD7E5923B749F500DA6EB4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
+		00BD7E5A23B749F500DA6EB4 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
+		00BD7E5B23B749F500DA6EB4 /* previewDataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4F523B3DCA1004C93C3 /* previewDataHandling.swift */; };
+		00BD7E5C23B749F600DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
+		00BD7E5D23B749F600DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
+		00BD7E5E23B749F600DA6EB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* User.swift */; };
+		00BD7E5F23B749F600DA6EB4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
+		00BD7E6023B749F600DA6EB4 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
+		00BD7E6123B749F600DA6EB4 /* previewDataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4F523B3DCA1004C93C3 /* previewDataHandling.swift */; };
+		00BD7E6323B7669D00DA6EB4 /* currentUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 00BD7E6223B7669D00DA6EB4 /* currentUser.json */; };
 		00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
 		00DEEEAF23B27CF00063C145 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEED23B287EE0063C145 /* SessionManagement.swift */; };
@@ -44,7 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0039E4F523B3DCA1004C93C3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0039E4F523B3DCA1004C93C3 /* previewDataHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previewDataHandling.swift; sourceTree = "<group>"; };
 		0039E4F823B3DD87004C93C3 /* previewData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = previewData.json; sourceTree = "<group>"; };
 		0039E4FA23B4CF72004C93C3 /* PreviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewList.swift; sourceTree = "<group>"; };
 		0094122023B12D4B0034780B /* frontBigTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontBigTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,9 +79,14 @@
 		0094124123B12D4D0034780B /* frontBigTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = frontBigTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0094124523B12D4D0034780B /* frontBigTipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frontBigTipUITests.swift; sourceTree = "<group>"; };
 		0094124723B12D4D0034780B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00B9F02423B810D100EF9FF9 /* currentUserHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentUserHandling.swift; sourceTree = "<group>"; };
+		00BD7E5023B7411E00DA6EB4 /* TapSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapSession.swift; sourceTree = "<group>"; };
+		00BD7E5123B7411E00DA6EB4 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		00BD7E5223B7411E00DA6EB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00BD7E6223B7669D00DA6EB4 /* currentUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currentUser.json; sourceTree = "<group>"; };
 		00DEEEAA23B27B270063C145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		00DEEEAC23B27CF00063C145 /* TipVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipVideo.swift; sourceTree = SOURCE_ROOT; };
-		00DEEEAD23B27CF00063C145 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = SOURCE_ROOT; };
+		00DEEEAC23B27CF00063C145 /* TipVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipVideo.swift; path = frontBigTip/Models/TipVideo.swift; sourceTree = SOURCE_ROOT; };
+		00DEEEAD23B27CF00063C145 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preview.swift; path = frontBigTip/Models/Preview.swift; sourceTree = SOURCE_ROOT; };
 		00DEEEED23B287EE0063C145 /* SessionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagement.swift; sourceTree = "<group>"; };
 		00DEEEEE23B287EE0063C145 /* DataHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandling.swift; sourceTree = "<group>"; };
 		14AD1406B6CD56B368329FC1 /* Pods_frontBigTipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frontBigTipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				0039E4F823B3DD87004C93C3 /* previewData.json */,
+				00BD7E6223B7669D00DA6EB4 /* currentUser.json */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -140,6 +165,7 @@
 				0039E4F723B3DD27004C93C3 /* Ressources */,
 				0094122323B12D4B0034780B /* AppDelegate.swift */,
 				0094122523B12D4B0034780B /* SceneDelegate.swift */,
+				00BD7E6423B7993000DA6EB4 /* DataHandling */,
 				0094122723B12D4B0034780B /* PreviewRow.swift */,
 				0039E4FA23B4CF72004C93C3 /* PreviewList.swift */,
 				0094122E23B12D4D0034780B /* LaunchScreen.storyboard */,
@@ -178,12 +204,23 @@
 			path = frontBigTipUITests;
 			sourceTree = "<group>";
 		};
+		00BD7E6423B7993000DA6EB4 /* DataHandling */ = {
+			isa = PBXGroup;
+			children = (
+				0039E4F523B3DCA1004C93C3 /* previewDataHandling.swift */,
+				00B9F02423B810D100EF9FF9 /* currentUserHandling.swift */,
+			);
+			path = DataHandling;
+			sourceTree = "<group>";
+		};
 		00DEEEAB23B27C890063C145 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				00DEEEAD23B27CF00063C145 /* Preview.swift */,
 				00DEEEAC23B27CF00063C145 /* TipVideo.swift */,
-				0039E4F523B3DCA1004C93C3 /* Data.swift */,
+				00BD7E5023B7411E00DA6EB4 /* TapSession.swift */,
+				00BD7E5123B7411E00DA6EB4 /* Tip.swift */,
+				00BD7E5223B7411E00DA6EB4 /* User.swift */,
+				00DEEEAD23B27CF00063C145 /* Preview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +372,7 @@
 			files = (
 				0039E4F923B3DD87004C93C3 /* previewData.json in Resources */,
 				0094123023B12D4D0034780B /* LaunchScreen.storyboard in Resources */,
+				00BD7E6323B7669D00DA6EB4 /* currentUser.json in Resources */,
 				0094122D23B12D4D0034780B /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,15 +501,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B9F02523B810D100EF9FF9 /* currentUserHandling.swift in Sources */,
 				0094122423B12D4B0034780B /* AppDelegate.swift in Sources */,
+				00BD7E5423B7411E00DA6EB4 /* Tip.swift in Sources */,
 				00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */,
+				00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */,
 				00DEEEAF23B27CF00063C145 /* Preview.swift in Sources */,
 				00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */,
 				0094122623B12D4B0034780B /* SceneDelegate.swift in Sources */,
 				0094122823B12D4B0034780B /* PreviewRow.swift in Sources */,
+				00BD7E5523B7411E00DA6EB4 /* User.swift in Sources */,
 				0039E4FB23B4CF72004C93C3 /* PreviewList.swift in Sources */,
 				00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */,
-				0039E4F623B3DCA1004C93C3 /* Data.swift in Sources */,
+				0039E4F623B3DCA1004C93C3 /* previewDataHandling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +521,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BD7E5B23B749F500DA6EB4 /* previewDataHandling.swift in Sources */,
+				00BD7E5823B749F500DA6EB4 /* User.swift in Sources */,
+				00BD7E5723B749F500DA6EB4 /* Tip.swift in Sources */,
+				00B9F02623B89A5D00EF9FF9 /* currentUserHandling.swift in Sources */,
+				00BD7E5923B749F500DA6EB4 /* Preview.swift in Sources */,
+				00BD7E5A23B749F500DA6EB4 /* TipVideo.swift in Sources */,
+				00BD7E5623B749F500DA6EB4 /* TapSession.swift in Sources */,
 				0094123B23B12D4D0034780B /* frontBigTipTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +536,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BD7E6123B749F600DA6EB4 /* previewDataHandling.swift in Sources */,
+				00BD7E5E23B749F600DA6EB4 /* User.swift in Sources */,
+				00BD7E5D23B749F600DA6EB4 /* Tip.swift in Sources */,
+				00B9F02723B89A5E00EF9FF9 /* currentUserHandling.swift in Sources */,
+				00BD7E5F23B749F600DA6EB4 /* Preview.swift in Sources */,
+				00BD7E6023B749F600DA6EB4 /* TipVideo.swift in Sources */,
+				00BD7E5C23B749F600DA6EB4 /* TapSession.swift in Sources */,
 				0094124623B12D4D0034780B /* frontBigTipUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

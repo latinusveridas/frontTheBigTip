@@ -11,9 +11,9 @@
 
 import Foundation
 
-isTapSessionRunning: Bool = False
+//isTapSessionRunning: Bool = False
 
-struc TapSession {
+struct TapSession {
     
     var lastTap: Tip // LastTap is reset when re-taping before end of countdown 
     fileprivate var countdown: Double // Represent the time 

@@ -1,7 +1,7 @@
 [
     {
         "previewId": "id1_preview",
-        "authorId": "author1",
+        "authorId": "user1",
         "authorName": "Quentin",
         "thumbnailLink": "video1Thumb",
         "tipVideoId": "id2_tipVideo",
@@ -10,7 +10,7 @@
     },
     {
         "previewId": "id2_preview",
-        "authorId": "author2",
+        "authorId": "user2",
         "authorName": "Katia",
         "thumbnailLink": "video2Thumb",
         "tipVideoId": "id2_tipVideo",

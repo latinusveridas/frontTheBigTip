@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TipVideo: Codable {
+class TipVideo: Codable {
 /* Represent a video object */
 
     // Static data
@@ -16,9 +16,9 @@ struct TipVideo: Codable {
     var tipVideoId: String
     var authorName: String
     var authorId: String
-    var maxTipNb: Int // Represent the maximum nb of tips a user can give 
-    var priceTip: Int // Represent the price of 1 tip    
-    
+    var maxTipNb: Int // Represent the maximum nb of tips a user can give
+    var priceTip: Int // Represent the price of 1 tip
+
     // Variable data
     var tipNb: Int // Represent the current nb of tips a user gave
 
@@ -26,41 +26,44 @@ struct TipVideo: Codable {
     var tipsList: [Tip?] // Represent the total nb of tips, all users included
     var totalTipsNb: Int
     var totalIncome: Int
-    
+
     // Video data
     var maxSize: Double
     var currentSize: Double
-    
-    init(preview: Preview, tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, totalTipsNb: Int, totalIncome: Int) {
-        self.preview = Preview
+
+    init(tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], totalTipsNb: Int, totalIncome: Int, maxSize: Double, currentSize: Double) {
         self.tipVideoId = tipVideoId
         self.authorName = authorName
         self.authorId = authorId
         self.tipNb = tipNb
-        self.maxTip = maxTip
+        self.maxTipNb = maxTip
         self.priceTip = priceTip
         self.totalTipsNb = totalTipsNb
         self.totalIncome = totalIncome
+        self.tipsList = tipsList
+        self.maxSize = maxSize
+        self.currentSize = currentSize
     }
-    
+
     func updateTipVideo() {
         self.totalTipsNb = self.tipsList.count
         self.totalIncome = self.totalTipsNb * self.priceTip
     }
-    
-    func tipped() {
-        /* This function is launch when the user had tiped */
-        
-        let dateTip = Now()
-        let user = User()
-        let newTip = Tip(price: self.priceTip, tipVideo: self, user: user )
-        
-        self.tipVideo.tipsList.append(newTip) // Add tip in the TipList of related TipVideo Object
-        self.tipVideo.updateTipVideo() // Update nb tips
-    }    
-    
+
+//    func tipped() {
+//        /* This function is launch when the user had tiped */
+//
+//        let dateTip = Date()
+//        let user = User
+//        let newTip = Tip(price: self.priceTip, tipVideo: self, user: user )
+//
+//        self.tipVideo.tipsList.append(newTip) // Add tip in the TipList of related TipVideo Object
+//        self.tipVideo.updateTipVideo() // Update nb tips
+//    }
+
     private func generateId() -> String {
     /* ID structure is TP_authorId_randomNb */
         return "test"
     }
+    
 }

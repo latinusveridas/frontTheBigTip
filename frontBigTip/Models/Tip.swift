@@ -13,13 +13,14 @@ struct Tip: Codable {
 
     var price: Int
     var date: Date
-    var tipVideo: TipVideo
+    weak var tipVideo: TipVideo?
     var user: User
-    
+
     init(price: Int, date: Date, tipVideo: TipVideo, user: User) {
         self.price = price
         self.date = date
-        self.tipVideo = TipVideo
-        self.user = User
+        self.tipVideo = tipVideo
+        self.user = user
     }
+
 }
