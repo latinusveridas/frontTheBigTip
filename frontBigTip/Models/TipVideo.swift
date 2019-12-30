@@ -12,8 +12,9 @@ class TipVideo: Codable {
 /* Represent a video object */
 
     // Static data
-    var preview: Preview? // Preview is set as optionnal as we init first TipVideo then the Preview
     var tipVideoId: String
+    var previewId: String
+    var preview: Preview? // Preview is set as optionnal as we init first TipVideo then the Preview
     var authorName: String
     var authorId: String
     var maxTipNb: Int // Represent the maximum nb of tips a user can give
@@ -31,8 +32,9 @@ class TipVideo: Codable {
     var maxSize: Double
     var currentSize: Double
 
-    init(tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], totalTipsNb: Int, totalIncome: Int, maxSize: Double, currentSize: Double) {
+    init(tipVideoId: String, previewId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], totalTipsNb: Int, totalIncome: Int, maxSize: Double, currentSize: Double) {
         self.tipVideoId = tipVideoId
+        self.previewId = previewId
         self.authorName = authorName
         self.authorId = authorId
         self.tipNb = tipNb

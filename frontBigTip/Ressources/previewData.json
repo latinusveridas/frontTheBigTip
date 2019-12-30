@@ -5,8 +5,8 @@
         "authorName": "Quentin",
         "thumbnailLink": "video1Thumb",
         "tipVideoId": "id2_tipVideo",
-        "tipNb": "4",
-        "priceTip": "20",
+        "tipNb": 4,
+        "priceTip": 20,
     },
     {
         "previewId": "id2_preview",
@@ -14,7 +14,7 @@
         "authorName": "Katia",
         "thumbnailLink": "video2Thumb",
         "tipVideoId": "id2_tipVideo",
-        "tipNb": "5",
-        "priceTip": "40",
+        "tipNb": 5,
+        "priceTip": 40,
     }
 ]

@@ -10,39 +10,42 @@ import Foundation
 import UIKit
 
 class sharedPreviewData {
-
-    static var previewList: [Preview?] = {
-        guard let data = loadJSONfile(url: "previewData") else {
-            print("No data loaded")
-            return []
-        }
-        let previewList = ParsingJSONtoListPreview(data: data)
-        print(previewList)
-        
-        return previewList
-    } ()
+/* This class represent the fetched Preview data */
+/* Type method are used as we do not instance an object, we directly use the type property */
     
-    let cacheThumbnails: NSCache<NSString, UIImage> = {
+    static var PreviewList: [Preview?] = []
+    static var ThumbnailCache: NSCache<NSString, UIImage> = NSCache<NSString, UIImage>()
+    
+    static func getPreviewList() {
+        let data = loadJSONfile(url: "previewData")
+        let previewList = parsingJSONtoListPreview(data: data)
+        
+        self.PreviewList.removeAll()
+        self.PreviewList = previewList
+    }
+    
+    static func cacheThumbnails() {
         let cacheThumbnails = NSCache<NSString, UIImage>()
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
-        for preview in previewList {
+        for preview in self.PreviewList {
             preview!.loadThumbnailImage(cache: cacheThumbnails)
         }
         
-        return cacheThumbnails
+        self.ThumbnailCache.removeAllObjects()
+        self.ThumbnailCache = cacheThumbnails
             
-    } ()
+    }
     
-    fileprivate static func loadJSONfile(url: String) -> Data? {
+    fileprivate static func loadJSONfile(url: String) -> Data {
     /* Load File to Data */
     
         let url = Bundle.main.url(forResource: url, withExtension: "json")!
-        guard let data = try? Data(contentsOf: url) else { fatalError("☠️") }
+        guard let data = try? Data(contentsOf: url) else { fatalError("Impossible to read the file") }
         return data
     }
     
-    fileprivate static func ParsingJSONtoListPreview(data: Data) -> [Preview?] {
+    fileprivate static func parsingJSONtoListPreview(data: Data) -> [Preview?] {
     /* Serialize JSON to List of Preview objects */
         
             let decoder = JSONDecoder()
@@ -50,5 +53,5 @@ class sharedPreviewData {
             guard let previewsList = try? decoder.decode([Preview].self, from: data) else { fatalError("Impossible to parse Json to Preview")}
             return previewsList
     }
-
+    
 }

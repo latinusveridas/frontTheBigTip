@@ -9,26 +9,23 @@
 import Foundation
 import SwiftUI
 
-//struct PreviewList: View {
-//
-//let previewData = sharedPreviewData.previewList
-//
-//    var body: some View {
-//        List(previewData, id: \.) { preview in
-//        }
-//    }
-//}
-//
-//struct PreviewList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PreviewList()
-//}
-//}
+let previewList = sharedPreviewData.PreviewList
 
 struct ContentView: View {
+    
     var body: some View {
-        Text("Hello, World!")
+    
+        VStack {
+            
+            previewList.forEach { elem in
+                elem.
+            }
+            
+        }
+                
     }
+        
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

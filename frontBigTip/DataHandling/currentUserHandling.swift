@@ -10,36 +10,34 @@ import Foundation
 import UIKit
 
 class sharedUserData {
+    
+    static var CurrentUser: User?
 
-    static var InitializedCurrentUser: User? = {
-        guard let data = loadJSONfile(url: "currentUser") else {
-            print("Loading of the file is not possible")
-            return nil
-        }
+    static func getCurrentUser() {
         
-        guard let user = ParsingJSONtoUser(data: data) else {
-            print("No user handled")
-            return nil
-        }
+        let data = loadJSONfile(url: "currentUser")
+        let user = parsingJSONtoUser(data: data)
         
         print("Current user loaded successfully :)")
-        return user
-    } ()
+        self.CurrentUser = user
+    }
     
-    fileprivate static func loadJSONfile(url: String) -> Data? {
+    fileprivate static func loadJSONfile(url: String) -> Data {
     /* Load File to Data */
     
         let url = Bundle.main.url(forResource: url, withExtension: "json")!
-        guard let data = try? Data(contentsOf: url) else { fatalError("☠️") }
+        guard let data = try? Data(contentsOf: url) else { fatalError("Impossible to read the file") }
+        
         return data
     }
     
-    fileprivate static func ParsingJSONtoUser(data: Data) -> User? {
+    fileprivate static func parsingJSONtoUser(data: Data) -> User {
     /* Serialize JSON to List of Preview objects */
         
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             guard let user = try? decoder.decode(User.self, from: data) else { fatalError("Impossible to parse Json to User")}
+        
             return user
     }
 

@@ -10,8 +10,6 @@ import Foundation
 
 struct User: Codable {
 /* Represent a user object */
-    
-    // static let shared = User() Singleton implementation for CurrentUser
 
     // Static data
     var userId: String
@@ -26,7 +24,7 @@ struct User: Codable {
     // Coins data
     var remainingCoins: Int
     
-    /*private*/ init(userId: String, login: String, email: String, password: String, tipVideoList: [TipVideo?]?, tipsList: [Tip?]?, remainingCoins: Int) {
+    init(userId: String, login: String, email: String, password: String, tipVideoList: [TipVideo?]?, tipsList: [Tip?]?, remainingCoins: Int) {
         self.userId = userId
         self.login = login  
         self.email = email
@@ -35,10 +33,6 @@ struct User: Codable {
         self.tipVideoList = tipVideoList
         self.tipsList = tipsList
     }
-    
-    func loadCurrentUser() {
         
-    }
-    
 }
 

@@ -44,7 +44,7 @@ struct Preview: Codable {
     }
     
     func loadThumbnailImage(cache: NSCache<NSString, UIImage>) {
-    /* Caching image from bundle */
+    /* Caching image from bundle and load it in a NSCache parameter */
     
         let link = self.thumbnailLink
         guard let url = Bundle.main.url(forResource: link, withExtension: "png") else {
