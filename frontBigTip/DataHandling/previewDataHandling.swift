@@ -24,12 +24,12 @@ class sharedPreviewData {
         self.PreviewList = previewList
     }
     
-    static func cacheThumbnails() {
+    static func cacheAllThumbnails() {
         let cacheThumbnails = NSCache<NSString, UIImage>()
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
         for preview in self.PreviewList {
-            preview!.loadThumbnailImage(cache: cacheThumbnails)
+            preview!.cacheThumbnailImage(cache: cacheThumbnails)
         }
         
         self.ThumbnailCache.removeAllObjects()

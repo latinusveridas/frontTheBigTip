@@ -1,5 +1,5 @@
 //
-//  PreviewList.swift
+//  GridPresentation.swift
 //  frontBigTip
 //
 //  Created by Quentin Duquesne on 26/12/2019.
@@ -11,16 +11,12 @@ import SwiftUI
 
 let previewList = sharedPreviewData.PreviewList
 
-struct ContentView: View {
+struct GridPresentation: View {
     
     var body: some View {
-    
-        VStack {
-            
-            previewList.forEach { elem in
-                elem.
-            }
-            
+
+        List {
+            GridRow(preview: XXXX)
         }
                 
     }
@@ -28,8 +24,8 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct GridPresentation_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GridPresentation()
     }
 }

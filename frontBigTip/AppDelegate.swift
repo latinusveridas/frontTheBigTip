@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         // Preview List initialization
         sharedPreviewData.getPreviewList()
-        sharedPreviewData.cacheThumbnails()
+        sharedPreviewData.cacheAllThumbnails()
         
         return true
     }

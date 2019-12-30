@@ -11,13 +11,13 @@ import SwiftUI
 
 struct PreviewRow : View {
     var preview: Preview
-    var img: UIImage = {
-        self.preview.
-    }()
     
     var body: some View {
         HStack {
-            
+            Image(uiImage: UIImage(data: preview.thumbnailImageData))
+                .resizable()
+                .frame(width: 50, height: 50)
+            Text(preview.authorName)
         }
     }
     

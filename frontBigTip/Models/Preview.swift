@@ -19,6 +19,7 @@ struct Preview: Codable {
     
     var thumbnailLink: String
     var thumbnailImageData: Data?
+    var thumbnailImage: UIImage?
     
     weak var tipVideo: TipVideo?
     
@@ -37,14 +38,14 @@ struct Preview: Codable {
         self.thumbnailImageData = thumbnailImage?.pngData()
     }
     
-    func GetThumbnailImageData() -> UIImage? {
+    func thumbnailDataToImage() -> UIImage? {
         guard let imageData = self.thumbnailImageData else { return nil }
         let image = UIImage(data: imageData)
         return image
     }
     
-    func loadThumbnailImage(cache: NSCache<NSString, UIImage>) {
-    /* Caching image from bundle and load it in a NSCache parameter */
+    func setThumbnailImageToCache(cache: NSCache<NSString, UIImage>) {
+    /* Caching image from Thumbnail Link and load it in a NSCache parameter */
     
         let link = self.thumbnailLink
         guard let url = Bundle.main.url(forResource: link, withExtension: "png") else {
