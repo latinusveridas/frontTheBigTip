@@ -8,9 +8,13 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Hashable {
 /* Represent a user object */
 
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.userId)
+    }
+    
     // Static data
     var userId: String
     var login: String

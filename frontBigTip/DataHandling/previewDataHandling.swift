@@ -29,7 +29,7 @@ class sharedPreviewData {
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
         for preview in self.PreviewList {
-            preview!.cacheThumbnailImage(cache: cacheThumbnails)
+            preview!.setThumbnailImageToCache(cache: cacheThumbnails)
         }
         
         self.ThumbnailCache.removeAllObjects()

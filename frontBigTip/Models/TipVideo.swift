@@ -8,9 +8,19 @@
 
 import Foundation
 
-class TipVideo: Codable {
+class TipVideo: Codable, Hashable {
+    
+    func hash(into hasher: inout Hasher) {
+        return hasher.combine(tipVideoId)
+    }
+    
+    static func == (lhs: TipVideo, rhs: TipVideo) -> Bool {
+        return lhs.tipVideoId == rhs.tipVideoId
+    }
+    
 /* Represent a video object */
 
+    
     // Static data
     var tipVideoId: String
     var previewId: String

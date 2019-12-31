@@ -14,11 +14,18 @@ struct PreviewRow : View {
     
     var body: some View {
         HStack {
-            Image(uiImage: UIImage(data: preview.thumbnailImageData))
+            Image(uiImage: UIImage(data: preview.thumbnailImageData!)!)
                 .resizable()
                 .frame(width: 50, height: 50)
             Text(preview.authorName)
         }
     }
     
+}
+
+struct PreviewRow_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewRow(preview: previewList[0]!)
+            .previewLayout(.fixed(width: 300, height: 70))
+    }
 }

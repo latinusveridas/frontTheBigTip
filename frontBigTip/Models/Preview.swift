@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 
-struct Preview: Codable {
+struct Preview: Codable, Hashable {
 /* Represent a thumbnailLink object */
-
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(previewId)
+    }
+    
     // Static data
     var previewId: String
     var authorId: String // Common w/ TipVideo
@@ -19,7 +23,6 @@ struct Preview: Codable {
     
     var thumbnailLink: String
     var thumbnailImageData: Data?
-    var thumbnailImage: UIImage?
     
     weak var tipVideo: TipVideo?
     

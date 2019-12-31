@@ -8,15 +8,21 @@
 
 import Foundation
 
-struct Tip: Codable {
+struct Tip: Codable, Hashable {
 /* Represent a Tip object */
 
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.tipId)
+    }
+    
+    var tipId: String
     var price: Int
     var date: Date
     weak var tipVideo: TipVideo?
     var user: User
 
-    init(price: Int, date: Date, tipVideo: TipVideo, user: User) {
+    init(tipId: String, price: Int, date: Date, tipVideo: TipVideo, user: User) {
+        self.tipId = tipId
         self.price = price
         self.date = date
         self.tipVideo = tipVideo

@@ -1,6 +1,6 @@
 [
     {
-        "previewId": "id1_preview",
+        "id": 01,
         "authorId": "user1",
         "authorName": "Quentin",
         "thumbnailLink": "video1Thumb",
@@ -9,7 +9,7 @@
         "priceTip": 20,
     },
     {
-        "previewId": "id2_preview",
+        "id": 02,
         "authorId": "user2",
         "authorName": "Katia",
         "thumbnailLink": "video2Thumb",
