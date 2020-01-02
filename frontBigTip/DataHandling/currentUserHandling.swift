@@ -11,9 +11,14 @@ import UIKit
 
 class sharedUserData {
     
-    static var CurrentUser: User?
+    var CurrentUser: User?
+    
+    static let shared = sharedUserData()
+    private init() {
+        getCurrentUser()
+    }
 
-    static func getCurrentUser() {
+    func getCurrentUser() {
         
         let data = loadJSONfile(url: "currentUser")
         let user = parsingJSONtoUser(data: data)
@@ -22,7 +27,7 @@ class sharedUserData {
         self.CurrentUser = user
     }
     
-    fileprivate static func loadJSONfile(url: String) -> Data {
+    fileprivate func loadJSONfile(url: String) -> Data {
     /* Load File to Data */
     
         let url = Bundle.main.url(forResource: url, withExtension: "json")!
@@ -31,13 +36,13 @@ class sharedUserData {
         return data
     }
     
-    fileprivate static func parsingJSONtoUser(data: Data) -> User {
+    fileprivate func parsingJSONtoUser(data: Data) -> User {
     /* Serialize JSON to List of Preview objects */
         
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             guard let user = try? decoder.decode(User.self, from: data) else { fatalError("Impossible to parse Json to User")}
-        
+            print("Parsing previews succeeded !")
             return user
     }
 

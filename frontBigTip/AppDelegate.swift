@@ -8,18 +8,18 @@
 
 import UIKit
 
+let sharedpreviewData = sharedPreviewData.shared
+let shareduserData = sharedUserData.shared
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // Current user initialization
-        sharedUserData.getCurrentUser()
-       
+               
         // Preview List initialization
-        sharedPreviewData.getPreviewList()
-        sharedPreviewData.cacheAllThumbnails()
+        sharedpreviewData.getPreviewList()
+        sharedpreviewData.cacheAllThumbnails()
         
         return true
     }

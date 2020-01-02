@@ -13,10 +13,13 @@ class sharedPreviewData {
 /* This class represent the fetched Preview data */
 /* Type method are used as we do not instance an object, we directly use the type property */
     
-    static var PreviewList: [Preview?] = []
-    static var ThumbnailCache: NSCache<NSString, UIImage> = NSCache<NSString, UIImage>()
+    var PreviewList: [Preview?] = []
+    var ThumbnailCache: NSCache<NSString, UIImage> = NSCache<NSString, UIImage>()
     
-    static func getPreviewList() {
+    static let shared = sharedPreviewData()
+    private init() {    }
+    
+    func getPreviewList() {
         let data = loadJSONfile(url: "previewData")
         let previewList = parsingJSONtoListPreview(data: data)
         
@@ -24,20 +27,21 @@ class sharedPreviewData {
         self.PreviewList = previewList
     }
     
-    static func cacheAllThumbnails() {
+    func cacheAllThumbnails() {
         let cacheThumbnails = NSCache<NSString, UIImage>()
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
-        for preview in self.PreviewList {
+        for preview in PreviewList {
             preview!.setThumbnailImageToCache(cache: cacheThumbnails)
         }
         
         self.ThumbnailCache.removeAllObjects()
         self.ThumbnailCache = cacheThumbnails
+        print("Thumbnail Cache loaded !")
             
     }
     
-    fileprivate static func loadJSONfile(url: String) -> Data {
+    fileprivate func loadJSONfile(url: String) -> Data {
     /* Load File to Data */
     
         let url = Bundle.main.url(forResource: url, withExtension: "json")!
@@ -45,7 +49,7 @@ class sharedPreviewData {
         return data
     }
     
-    fileprivate static func parsingJSONtoListPreview(data: Data) -> [Preview?] {
+    fileprivate func parsingJSONtoListPreview(data: Data) -> [Preview?] {
     /* Serialize JSON to List of Preview objects */
         
             let decoder = JSONDecoder()
