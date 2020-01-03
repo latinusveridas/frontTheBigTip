@@ -9,18 +9,8 @@
 import Foundation
 
 class TipVideo: Codable, Hashable {
-    
-    func hash(into hasher: inout Hasher) {
-        return hasher.combine(tipVideoId)
-    }
-    
-    static func == (lhs: TipVideo, rhs: TipVideo) -> Bool {
-        return lhs.tipVideoId == rhs.tipVideoId
-    }
-    
 /* Represent a video object */
 
-    
     // Static data
     var tipVideoId: String
     var previewId: String
@@ -42,6 +32,16 @@ class TipVideo: Codable, Hashable {
     var maxSize: Double
     var currentSize: Double
 
+    // Hashing functions to plug to SwiftUI
+    func hash(into hasher: inout Hasher) {
+        return hasher.combine(tipVideoId)
+    }
+    
+    static func == (lhs: TipVideo, rhs: TipVideo) -> Bool {
+        return lhs.tipVideoId == rhs.tipVideoId
+    }
+    
+    // Initialization
     init(tipVideoId: String, previewId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], totalTipsNb: Int, totalIncome: Int, maxSize: Double, currentSize: Double) {
         self.tipVideoId = tipVideoId
         self.previewId = previewId

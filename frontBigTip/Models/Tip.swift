@@ -18,8 +18,8 @@ struct Tip: Codable, Hashable {
     var tipId: String
     var price: Int
     var date: Date
-    weak var tipVideo: TipVideo?
-    var user: User
+    weak var tipVideo: TipVideo
+    weak var user: User
 
     init(tipId: String, price: Int, date: Date, tipVideo: TipVideo, user: User) {
         self.tipId = tipId
