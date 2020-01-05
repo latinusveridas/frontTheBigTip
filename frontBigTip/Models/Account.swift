@@ -8,23 +8,24 @@
 
 import Foundation
 
-final class Account {
+final class Account: Codable {
     
     static let shared = Account()
     private init() {
-        self.user = shareduserData.CurrentUser!
-        self.coinsAvailable = shareduserData.CurrentUser!.coinsAvailable
+        self.user = shareduserData.currentUser!
+        self.coinsAvailable = shareduserData.currentUser!.coinsAvailable
         self.accountDrawdownsList = []
         self.refillList = []
     }
     
-    let user: User!
-    
-    var refillList: [Refill?] // A
+    let user: CurrentUser!
+    var refillList: [AccountRefill?] // A
     var accountDrawdownsList: [AccountDrawdown?] // B
     var coinsAvailable: Double! // A - B
         
     func calculateCoinsAvailable() {
+    /* Calculate coinsAvalaible based on accountDrawdowns list & refill List */
+        
         var calcCoins: Double = 0.00
         
         self.refillList.forEach { refillItem in
@@ -45,11 +46,4 @@ final class Account {
     
 }
 
-final class Refill {
-    
-    var date: Date!
-    var cashAmount: Double!
-    var coinsAmount: Double!
-    var user: User!
-    
-}
+

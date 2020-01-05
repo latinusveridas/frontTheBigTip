@@ -11,18 +11,20 @@ import UIKit
 
 class AccountStatementManagement {
 /* Manage the synchronisation of the local Account Statements and the API */
+/* Sync are manual and automatic */
     
     var SyncTimer = Timer()
     var countdown : Double
     
-    var LocalAccountStatement: [AccountDrawdown?] = []
-    var APIAccountStatement: [AccountDrawdown?] = []
+    var LocalAccountStatement: Account!
+    var APIAccountStatement: Account!
     
     static var shared = AccountStatementManagement()
     private init() {
-        self.countdown = 60.00
+        self.countdown = 15.00
     }
 
+    /* AUTOMATIC SYNCHRONIZATION */
     func startTimer() {
         SyncTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
@@ -43,6 +45,7 @@ class AccountStatementManagement {
         SyncTimer.invalidate()
     }
     
+    /* MANUAL SYNCHRONIZATION */
     func syncAccountEventssWithApi() {
         
         

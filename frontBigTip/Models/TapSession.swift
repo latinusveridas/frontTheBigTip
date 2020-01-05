@@ -65,7 +65,7 @@ class TapSession: Codable {
     func tapOccured() {
     /*  */
     
-        let currentUser = sharedUserData.shared.CurrentUser!
+        let currentUser = sharedUserData.shared.currentUser!
         let tipVideo = TipVideo(tipVideoId: "xx", previewId: "xx", tipNb: 30, authorName: "john", authorId: "johnid", maxTip: 40, priceTip: 3, tipsList: [], totalTipsNb: 30, totalIncome: 130, maxSize: 30, currentSize: 10)
         let date = Date()
         let newTip = Tip(tipId: "XX", price: 4, date: date, tipVideo: tipVideo, user: currentUser)

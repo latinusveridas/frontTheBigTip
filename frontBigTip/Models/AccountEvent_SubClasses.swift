@@ -11,23 +11,34 @@ import Foundation
 class AccountEvent {
 }
 
-class AccountDrawdown: AccountEvent {
+final class AccountDrawdown: AccountEvent, Codable {
 /* Account Drawdown is created when a tap session ended */
     
     var accountDrawdownId: String!
-    weak var user: User!
+    weak var user: CurrentUser!
+    var date: Date!
     var tapSessionId: String!
     var tipNb: Int!
     var coinPrice: Int!
     var totalCoinsDrawdown: Double { Double( coinPrice * tipNb) }
     
-    init(accountDrawdownId: String, user: User, tapSessionId: String!, tipNb: Int!, coinPrice: Int!) {
+    init(accountDrawdownId: String, user: CurrentUser, tapSessionId: String!, tipNb: Int!, coinPrice: Int!) {
         self.accountDrawdownId = accountDrawdownId
         self.user = user
         self.tapSessionId = tapSessionId
         self.tipNb = tipNb
         self.coinPrice = coinPrice
     }
+    
+}
+
+final class AccountRefill: AccountEvent, Codable {
+
+    var accountRefillId: String!
+    weak var user: CurrentUser!
+    var date: Date!
+    var cashAmount: Double!
+    var coinsAmount: Double!
     
 }
 
