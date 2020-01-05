@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 
-struct Preview: Codable, Hashable {
+class Preview: Codable, Hashable {
 /* Represent a thumbnailLink object */
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(previewId)
+    }
+    
+    static func == (lhs: Preview, rhs: Preview) -> Bool {
+        return lhs.previewId == rhs.previewId
     }
     
     // Static data
@@ -50,7 +54,7 @@ struct Preview: Codable, Hashable {
     func setThumbnailImageToCache(cache: NSCache<NSString, UIImage>) {
     /* Caching image from Thumbnail Link and load it in a NSCache parameter */
     
-        let link = self.thumbnailLink
+        let link = thumbnailLink
         guard let url = Bundle.main.url(forResource: link, withExtension: "png") else {
             print("URL not found")
             return
@@ -69,8 +73,8 @@ struct Preview: Codable, Hashable {
     
     }
     
-    mutating func updatethumbnailLink(newLink: String) {
-        self.thumbnailLink = newLink
+    func updatethumbnailLink(newLink: String) {
+        thumbnailLink = newLink
     }
     
     private func generateId() -> String {

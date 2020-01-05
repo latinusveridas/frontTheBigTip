@@ -8,45 +8,56 @@
 
 import Foundation
 
-var runningTapSessionList = [TapSession?]
+var runningTapSessionList: [TapSession?] = [] // Contains only 1 value or empty
 
-class TapSession {
+class TapSession: Codable {
 /* A tap session is a sequence of tap */
 /* Once the session is finished, the data packet is sent to the API to debit the remaining coins */  
 
-    static var isTapSessionRunning: Bool = False
+    static var isTapSessionRunning: Bool = false
     
-    var lastTip: Tip // LastTap is reset when re-taping before end of countdown 
-    var tipList: [Tip?]
+    var tapSessionId: String!
     
-    var countdown: Double // Represent the time 
-    let timer: Timer?
+    var lastTip: Tip? // LastTap is reset when re-taping before end of countdown
+    var tipList: [Tip?] = []
     
-    init(countdown: Double) {
-        self.countdown = countdown
-        self.timer = Timer()
+    var countdown: Double? // Represent the countdown, optional as non mandotory when retrieved from API
+    var timer = Timer()
+    
+    enum CodingKeys: String, CodingKey {
+        case tapSessionId
+        case tipList
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        tapSessionId = try container.decode(String.self, forKey: .tapSessionId)
+        tipList = try container.decode([Tip?].self, forKey: .tipList)
+        timer = Timer()
+    }
+    
+    init(tapSessionId: String!) {
+        self.countdown = 60
+        self.tapSessionId = tapSessionId
         startTimer()
     }
 
     func startTimer() {
-        self.timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
-    func updateTime() {
+    @objc func updateTime() {
     // Function called each second, and perform the assessment
-         if seconds < self.countdown {
+        if countdown! < 1 {
           self.timer.invalidate()
-          
          } else {
-              self.countdown -= 1
+          self.countdown! -= 1
          }
-     
     }
     
     func endTimer() {
         self.timer.invalidate()
     }
-
 }
 
 /* UI Patterns */
@@ -54,20 +65,20 @@ class TapSession {
     func tapOccured() {
     /*  */
     
-        var currentUser = sharedUserData.CurrentUser
-        var tipVideo  = // CurrentViewTipVideo
-        var date = Date()
-        var newTip = Tip(tipId: "XX", price: 4, date: date, tipVideo: tipVideo, user: currentUser)
+        let currentUser = sharedUserData.shared.CurrentUser!
+        let tipVideo = TipVideo(tipVideoId: "xx", previewId: "xx", tipNb: 30, authorName: "john", authorId: "johnid", maxTip: 40, priceTip: 3, tipsList: [], totalTipsNb: 30, totalIncome: 130, maxSize: 30, currentSize: 10)
+        let date = Date()
+        let newTip = Tip(tipId: "XX", price: 4, date: date, tipVideo: tipVideo, user: currentUser)
         
-        if TapSession.isTapSessionRunning = False {
+        if TapSession.isTapSessionRunning == false {
         // Creation a new Tap Session
         
-            var tapSession = TapSession()
+            let tapSession = TapSession(tapSessionId: "tapSessionId1")
             tapSession.tipList.append(newTip)
             tapSession.lastTip = newTip
             tapSession.startTimer()
             
-            TapSession.isTapSessionRunning = True // Type Method
+            TapSession.isTapSessionRunning = true // Type Method
             runningTapSessionList.append(tapSession)
         } else {
         // Tap Session is already running, so we update the last tip

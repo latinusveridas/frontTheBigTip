@@ -10,6 +10,7 @@ import UIKit
 
 let sharedpreviewData = sharedPreviewData.shared
 let shareduserData = sharedUserData.shared
+let sharedAPITapSessions = sharedTapSessionAPI.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sharedpreviewData.getPreviewList()
         sharedpreviewData.cacheAllThumbnails()
         
+        // Current user initialization
+        shareduserData.getCurrentUser()
+        
+        // Fetching TapSessions from API
+        sharedAPITapSessions.getTapSessionList()
+                
         return true
     }
 

@@ -9,59 +9,26 @@
 import Foundation
 
 class AccountEvent {
-    
 }
 
 class AccountDrawdown: AccountEvent {
+/* Account Drawdown is created when a tap session ended */
     
-    // Static Data
-    var accountStatementId: String!
+    var accountDrawdownId: String!
     weak var user: User!
+    var tapSessionId: String!
+    var tipNb: Int!
+    var coinPrice: Int!
+    var totalCoinsDrawdown: Double { Double( coinPrice * tipNb) }
     
-    // Variable Data
-    var TapSessionList: [TapSession?]
-    
-    init(accountStatementId: String, user: User) {
-        self.accountStatementId = accountStatementId
+    init(accountDrawdownId: String, user: User, tapSessionId: String!, tipNb: Int!, coinPrice: Int!) {
+        self.accountDrawdownId = accountDrawdownId
         self.user = user
+        self.tapSessionId = tapSessionId
+        self.tipNb = tipNb
+        self.coinPrice = coinPrice
     }
-    
     
 }
 
-class AccountStatementManagement {
-/* Manage the synchronisation of the local Account Statements and the API */    
-    
-    static var shared = AccountStatementManagement()
-    private init() {}
-    
-    var SyncTimer: Timer()
-    
-    var LocalAccountStatement = [AccountStatement?]
-    var APIAccountStatement = [AccountStatement?]
 
-    func startTimer() {
-        self.SyncTimer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-    }
-    
-    func updateTime() {
-    // Function called each second, and perform the assessment
-         if seconds < self.countdown {
-          self.SyncTimer.invalidate()
-          
-         } else {
-              self.countdown -= 1
-         }
-     
-    }
-    
-    func endTimer() {
-        self.timer.invalidate()
-    }    
-    
-    func syncAccountEventssWithApi() {
-        
-    }
-    
-    
-}

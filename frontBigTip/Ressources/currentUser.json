@@ -1,7 +1,7 @@
 {
-    "userId": "user1",
+    "userId": "user3",
     "login": "quentin",
     "email": "qdprivatemail@gmail.com",
     "password": "azerty",
-    "remainingCoins": 200,
+    "coinsAvailable": 200,
 }

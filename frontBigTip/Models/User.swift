@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct User: Codable, Hashable {
+class User: Codable, Hashable {
 /* Represent a user object */
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.userId)
+    }
+    
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.userId == rhs.userId
     }
     
     // Static data
@@ -26,14 +30,14 @@ struct User: Codable, Hashable {
     var tipsList: [Tip?]?
     
     // Coins data
-    var remainingCoins: Int
+    var coinsAvailable: Double
     
-    init(userId: String, login: String, email: String, password: String, tipVideoList: [TipVideo?]?, tipsList: [Tip?]?, remainingCoins: Int) {
+    init(userId: String, login: String, email: String, password: String, tipVideoList: [TipVideo?]?, tipsList: [Tip?]?, coinsAvailable: Double) {
         self.userId = userId
         self.login = login  
         self.email = email
         self.password = password
-        self.remainingCoins = remainingCoins
+        self.coinsAvailable = coinsAvailable
         self.tipVideoList = tipVideoList
         self.tipsList = tipsList
     }

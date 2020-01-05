@@ -14,16 +14,14 @@ class sharedUserData {
     var CurrentUser: User?
     
     static let shared = sharedUserData()
-    private init() {
-        getCurrentUser()
-    }
+    private init() {    }
 
     func getCurrentUser() {
         
         let data = loadJSONfile(url: "currentUser")
         let user = parsingJSONtoUser(data: data)
         
-        print("Current user loaded successfully :)")
+        print("Current user loaded successfully !")
         self.CurrentUser = user
     }
     
