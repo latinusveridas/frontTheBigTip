@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class sharedTapSessionAPI {
+class SharedTapSessionAPI {
 /* This class represent the fetched Tap Session data from API */
 /* Type method are used as we do not instance an object, we directly use the type property */
     
@@ -25,7 +25,6 @@ class sharedTapSessionAPI {
         self.TapSessionList.removeAll()
         self.TapSessionList = TapSessionList
     }
-    
     
     fileprivate func loadJSONfile(url: String) -> Data {
     /* Load File to Data */

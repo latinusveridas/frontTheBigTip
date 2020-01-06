@@ -18,6 +18,7 @@ class TapSession: Codable {
     
     var tapSessionId: String!
     
+    var tipVideoId: String!
     var lastTip: Tip? // LastTap is reset when re-taping before end of countdown
     var tipList: [Tip?] = []
     
@@ -27,18 +28,21 @@ class TapSession: Codable {
     enum CodingKeys: String, CodingKey {
         case tapSessionId
         case tipList
+        case tipVideoId
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        tipVideoId = try container.decode(String.self, forKey: .tipVideoId)
         tapSessionId = try container.decode(String.self, forKey: .tapSessionId)
         tipList = try container.decode([Tip?].self, forKey: .tipList)
         timer = Timer()
     }
     
-    init(tapSessionId: String!) {
+    init(tapSessionId: String!, tipVideoId: String!) {
         self.countdown = 60
         self.tapSessionId = tapSessionId
+        self.tipVideoId = tipVideoId
         startTimer()
     }
 
@@ -83,6 +87,7 @@ class TapSession: Codable {
         } else {
         // Tap Session is already running, so we update the last tip
         
+            // PLACEHOLDER check if new tipVideoId is same as previous one, if not => Save TapSession and Create a new one
             guard let tapSession = runningTapSessionList[0] else { return }
             tapSession.tipList.append(newTip) // update of running tapSession
             tapSession.lastTip = newTip

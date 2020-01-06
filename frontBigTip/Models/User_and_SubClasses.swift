@@ -9,42 +9,40 @@
 import Foundation
 
 class User: Codable {
+/* Represent a user object */
+
     var userId: String!
+    var followedUserList: [User?]
+    var publicName: String!
     
     enum SuperCodingKeys: String, CodingKey {
         case userId
+        case followedUserList
+        case publicName
     }
     
-    init(userId: String!) {
+    init(userId: String!, publicName: String!) {
         self.userId = userId
+        self.followedUserList = []
+        self.publicName = publicName
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SuperCodingKeys.self)
         self.userId = try container.decode(String.self, forKey: .userId)
+        self.followedUserList = try container.decode([User.self], forKey: .followedUserList)
+        self.publicName = try container.decode(String.self, forKey: publicName)
     }
 }
 
 class PublicUser: User, Hashable {
-/* Represent a user object */
     
-    // Static data
-    var publicName: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case publicName
-    }
-
-    init(userId: String!, publicName: String?) {
-        super.init(userId: userId)
-        self.userId = userId
-        self.publicName = publicName
+    init(userId: String!, publicName: String!) {
+        super.init(userId: userId, publicName: publicName)
     }
     
     required init(from decoder: Decoder) throws {
         try super.init(from: decoder)
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.publicName = try container.decode(String.self, forKey: .publicName)
     }
     
     func hash(into hasher: inout Hasher) {
@@ -58,29 +56,28 @@ class PublicUser: User, Hashable {
 }
 
 class CurrentUser: User {
-    
+/* Represent a the current user object, used as a singleton through the application */    
+
     static let shared = CurrentUser()
     private init() {
-        super.init(userId: "")
         // PLACEHOLDER API CALL
+        super.init(userId: "")
     }
     
     // Static data
-    var publicName: String!
     var login: String!
     var email: String!
     var password : String!
+    var jwt: String?
 
     // Variable data
-    var tipVideoList: [TipVideo?]?
-    var tipsList: [Tip?]?
+    var tipVideoList: [TipVideo?]? // Own TipVideo
+    var tipsList: [Tip?]? // 
 
     // Coins data
     var coinsAvailable: Double!
 
     enum CodingKeys: String, CodingKey {
-        case userId
-        case publicName
         case login
         case email
         case password
@@ -91,7 +88,6 @@ class CurrentUser: User {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.publicName = try container.decode(String.self, forKey: .publicName)
         self.login = try container.decode(String.self, forKey: .login)
         self.email = try container.decode(String.self, forKey: .email)
         self.password = try container.decode(String.self, forKey: .password)

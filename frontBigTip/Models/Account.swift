@@ -12,30 +12,26 @@ final class Account: Codable {
     
     static let shared = Account()
     private init() {
-        self.user = shareduserData.currentUser!
+        self.user = ShareduserData.currentUser!.userId
         self.coinsAvailable = shareduserData.currentUser!.coinsAvailable
-        self.accountDrawdownsList = []
+        self.drawdownList = []
         self.refillList = []
     }
     
-    let user: CurrentUser!
+    let userId: String!
     var refillList: [AccountRefill?] // A
-    var accountDrawdownsList: [AccountDrawdown?] // B
+    var drawdownList: [AccountDrawdown?] // B
     var coinsAvailable: Double! // A - B
         
     func calculateCoinsAvailable() {
     /* Calculate coinsAvalaible based on accountDrawdowns list & refill List */
-        
         var calcCoins: Double = 0.00
-        
         self.refillList.forEach { refillItem in
             calcCoins = calcCoins + refillItem!.coinsAmount
         }
-        
-        self.accountDrawdownsList.forEach { drawdownItem in
+        self.drawdownList.forEach { drawdownItem in
             calcCoins = calcCoins - drawdownItem!.totalCoinsDrawdown
         }
-        
         self.coinsAvailable = calcCoins
     }
     

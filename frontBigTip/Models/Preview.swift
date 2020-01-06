@@ -32,15 +32,15 @@ class Preview: Codable, Hashable {
     
     // Variable data
     var tipNb: Int // Common w/ TipVideo
-    var priceTip: Int // Common w/ TipVideo
+    var maxTipNb: Int // Represent the maximum nb of tips a user can give | Common w/ TipVideo
     
-    init(previewId: String, authorId: String, authorName: String, thumbnailLink: String, thumbnailImage: UIImage?, tipVideo: TipVideo?, tipNb: Int, priceTip: Int) {
+    init(previewId: String, authorId: String, authorName: String, thumbnailLink: String, thumbnailImage: UIImage?, tipVideo: TipVideo?, tipNb: Int, maxTipNb: Int) {
         self.previewId = previewId
         self.authorId = authorId
         self.authorName = authorName
         self.thumbnailLink = thumbnailLink
         self.tipNb = tipNb
-        self.priceTip = priceTip
+        self.maxTipNb = maxTipNb
         self.tipVideo = tipVideo
         self.thumbnailImageData = thumbnailImage?.pngData()
     }

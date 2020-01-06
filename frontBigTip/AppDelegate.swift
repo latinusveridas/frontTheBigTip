@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
                
         // Preview List initialization
-        sharedpreviewData.getPreviewList()
-        sharedpreviewData.cacheAllThumbnails()
+        SharedPreviewData.getPreviewList()
+        SharedPreviewData.cacheAllThumbnails()
         
         // Current user initialization
-        shareduserData.getCurrentUser()
+        SharedUserData.getCurrentUser()
         
         // Fetching TapSessions from API
         sharedAPITapSessions.getTapSessionList()

@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class sharedPreviewData {
+class SharedPreviewData {
 /* This class represent the fetched Preview data */
 /* Type method are used as we do not instance an object, we directly use the type property */
     
-    var PreviewList: [Preview?] = []
+    var PreviewDict: [String:Preview] = [:]
     var ThumbnailCache: NSCache<NSString, UIImage> = NSCache<NSString, UIImage>()
     
     static let shared = sharedPreviewData()
@@ -21,17 +21,17 @@ class sharedPreviewData {
     
     func getPreviewList() {
         let data = loadJSONfile(url: "previewData")
-        let previewList = parsingJSONtoListPreview(data: data)
+        let previewDict = parsingJSONtoPreviewDict(data: data)
         
-        self.PreviewList.removeAll()
-        self.PreviewList = previewList
+        self.PreviewDict.removeAll()
+        self.PreviewDict = previewDict
     }
     
     func cacheAllThumbnails() {
         let cacheThumbnails = NSCache<NSString, UIImage>()
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
-        for preview in PreviewList {
+        for preview in PreviewDict {
             preview!.setThumbnailImageToCache(cache: cacheThumbnails)
         }
         
@@ -49,13 +49,17 @@ class sharedPreviewData {
         return data
     }
     
-    fileprivate func parsingJSONtoListPreview(data: Data) -> [Preview?] {
+    fileprivate func parsingJSONtoPreviewDict(data: Data) -> [String:Preview] {
     /* Serialize JSON to List of Preview objects */
-        
+            
+            var tempDict: [String:Preview] = [:]
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            guard let previewsList = try? decoder.decode([Preview].self, from: data) else { fatalError("Impossible to parse Json to Preview")}
-            return previewsList
+            guard let previewList = try? decoder.decode([Preview].self, from: data) else { fatalError("Impossible to parse Json to Preview")}
+            previewList.forEach { item in 
+                tempDict[item.previewId] = item
+            }
+            return tempDict
     }
     
 }

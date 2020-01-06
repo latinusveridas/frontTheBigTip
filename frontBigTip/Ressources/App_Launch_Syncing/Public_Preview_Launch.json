@@ -6,7 +6,7 @@
         "thumbnailLink": "video1Thumb",
         "tipVideoId": "id2_tipVideo",
         "tipNb": 4,
-        "priceTip": 20,
+        "maxTipNb": 20,
     },
     {
         "previewId": "02",
@@ -15,6 +15,6 @@
         "thumbnailLink": "video2Thumb",
         "tipVideoId": "id2_tipVideo",
         "tipNb": 5,
-        "priceTip": 40,
+        "maxTipNb": 40,
     }
 ]
