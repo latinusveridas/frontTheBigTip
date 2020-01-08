@@ -43,7 +43,7 @@ final class AccountRefill: AccountEvent, Codable {
     var cashAmount: Double!
     var coinsAmount: Double!
     
-    init(accountRefillId: String!, userId: String!, date: Date!, cashAmount: Double!. coinsAmount: Double!) {
+    init(accountRefillId: String!, userId: String!, date: Date!, cashAmount: Double!, coinsAmount: Double!) {
         self.accountRefillId = accountRefillId
         self.userId = userId
         self.date = date

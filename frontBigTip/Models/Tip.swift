@@ -23,14 +23,14 @@ class Tip: Codable, Hashable {
     var price: Int!
     var date: Date!
     var tipVideoId: String!
-    var user: String!
+    var userId: String!
     
     enum CodingKeys: String, CodingKey {
         case tipId
         case price
         case date
         case tipVideoId
-        case user
+        case userId
     }
     
     required init(from decoder: Decoder) throws {
@@ -41,15 +41,15 @@ class Tip: Codable, Hashable {
         let formatter = ISO8601DateFormatter()
         date = formatter.date(from: strDate)
         tipVideoId = try container.decode(String.self, forKey: .tipVideoId)
-        user = try container.decode(String.self, forKey: .user)
+        userId = try container.decode(String.self, forKey: .userId)
     }
 
-    init(tipId: String, price: Int, date: Date, tipVideoId: String!, user: String!) {
+    init(tipId: String, price: Int, date: Date, tipVideoId: String!, userId: String!) {
         self.tipId = tipId
         self.price = price
         self.date = date
-        self.tipVideo = tipVideo
-        self.user = user
+        self.tipVideoId = tipVideoId
+        self.userId = userId
     }
 
 }

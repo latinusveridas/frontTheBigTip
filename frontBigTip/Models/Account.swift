@@ -12,7 +12,7 @@ final class Account: Codable {
     
     static let shared = Account()
     private init() {
-        self.user = ShareduserData.currentUser!.userId
+        self.userId = shareduserData.currentUser!.userId
         self.coinsAvailable = shareduserData.currentUser!.coinsAvailable
         self.drawdownList = []
         self.refillList = []

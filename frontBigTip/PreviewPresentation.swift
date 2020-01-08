@@ -9,21 +9,25 @@
 import Foundation
 import SwiftUI
 
-let previewList = sharedpreviewData.PreviewList
+let previewDict = sharedpreviewData.PreviewDict
+let previewList = previewDict.map{$0.value}
 
 struct PreviewPresentation: View {
-        
+
     var body: some View {
+        
         NavigationView {
+            
             List(previewList, id: \.self) { elem in
                 HStack {
-                    PreviewRow(preview: elem!)
+                    PreviewRow(preview: elem)
                 }
             }
+            
         }
     }
-    
 }
+
 
 struct PreviewPresentation_Previews: PreviewProvider {
     static var previews: some View {

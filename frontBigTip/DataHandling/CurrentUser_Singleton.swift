@@ -13,12 +13,12 @@ class SharedUserData {
     
     var currentUser: CurrentUser?
     
-    static let shared = sharedUserData()
+    static let shared = SharedUserData()
     private init() {    }
     
     func getCurrentUser() {
         
-        let data = loadJSONfile(url: "currentUser")
+        let data = loadJSONfile(url: "Current_User_Launch")
         let user = parsingJSONtoUser(data: data)
         
         print("Current user loaded successfully !")

@@ -8,9 +8,9 @@
 
 import UIKit
 
-let sharedpreviewData = sharedPreviewData.shared
-let shareduserData = sharedUserData.shared
-let sharedAPITapSessions = sharedTapSessionAPI.shared
+let sharedpreviewData = SharedPreviewData.shared
+let shareduserData = SharedUserData.shared
+let sharedAPITapSessions = SharedTapSessionAPI.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
                
         // Preview List initialization
-        SharedPreviewData.getPreviewList()
-        SharedPreviewData.cacheAllThumbnails()
+        sharedpreviewData.getPreviewList()
+        sharedpreviewData.cacheAllThumbnails()
         
         // Current user initialization
-        SharedUserData.getCurrentUser()
+        shareduserData.getCurrentUser()
         
         // Fetching TapSessions from API
         sharedAPITapSessions.getTapSessionList()

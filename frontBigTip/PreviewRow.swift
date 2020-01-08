@@ -29,7 +29,7 @@ struct PreviewRow : View {
 struct PreviewRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        PreviewRow(preview: previewList[0]!)
+        PreviewRow(preview: previewList[0])
         //PreviewRow(preview: previewList[1]!)
         }
 

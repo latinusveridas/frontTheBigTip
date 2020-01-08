@@ -30,15 +30,15 @@ class User: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SuperCodingKeys.self)
         self.userId = try container.decode(String.self, forKey: .userId)
-        self.followedUserList = try container.decode([User.self], forKey: .followedUserList)
-        self.publicName = try container.decode(String.self, forKey: publicName)
+        self.followedUserList = try container.decode([User?].self, forKey: .followedUserList)
+        self.publicName = try container.decode(String.self, forKey: .publicName)
     }
 }
 
 class PublicUser: User, Hashable {
     
-    init(userId: String!, publicName: String!) {
-        super.init(userId: userId, publicName: publicName)
+    init() {
+        super.init(userId: "", publicName: "")
     }
     
     required init(from decoder: Decoder) throws {
@@ -61,7 +61,7 @@ class CurrentUser: User {
     static let shared = CurrentUser()
     private init() {
         // PLACEHOLDER API CALL
-        super.init(userId: "")
+        super.init(userId: "", publicName: "")
     }
     
     // Static data

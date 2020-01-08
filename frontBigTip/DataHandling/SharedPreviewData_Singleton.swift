@@ -16,11 +16,11 @@ class SharedPreviewData {
     var PreviewDict: [String:Preview] = [:]
     var ThumbnailCache: NSCache<NSString, UIImage> = NSCache<NSString, UIImage>()
     
-    static let shared = sharedPreviewData()
+    static let shared = SharedPreviewData()
     private init() {    }
     
     func getPreviewList() {
-        let data = loadJSONfile(url: "previewData")
+        let data = loadJSONfile(url: "Public_Preview_Launch")
         let previewDict = parsingJSONtoPreviewDict(data: data)
         
         self.PreviewDict.removeAll()
@@ -31,8 +31,8 @@ class SharedPreviewData {
         let cacheThumbnails = NSCache<NSString, UIImage>()
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
-        for preview in PreviewDict {
-            preview!.setThumbnailImageToCache(cache: cacheThumbnails)
+        for (_, preview)in PreviewDict {
+            preview.setThumbnailImageToCache(cache: cacheThumbnails)
         }
         
         self.ThumbnailCache.removeAllObjects()

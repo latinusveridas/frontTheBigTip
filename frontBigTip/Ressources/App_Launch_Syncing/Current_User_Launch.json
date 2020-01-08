@@ -1,6 +1,8 @@
 {
     "userId": "user3",
     "login": "quentin",
+    "followedUserList": [],
+    "publicName": "QuentinLaLegende"
     "email": "qdprivatemail@gmail.com",
     "password": "azerty",
     "coinsAvailable": 200,

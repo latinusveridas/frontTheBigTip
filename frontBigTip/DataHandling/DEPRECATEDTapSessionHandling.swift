@@ -15,7 +15,7 @@ class SharedTapSessionAPI {
     
     var TapSessionList: [TapSession?] = []
     
-    static let shared = sharedTapSessionAPI()
+    static let shared = SharedTapSessionAPI()
     private init() {    }
     
     func getTapSessionList() {

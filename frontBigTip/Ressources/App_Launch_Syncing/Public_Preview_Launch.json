@@ -4,7 +4,7 @@
         "authorId": "user1",
         "authorName": "Quentin",
         "thumbnailLink": "video1Thumb",
-        "tipVideoId": "id2_tipVideo",
+        "tipVideoId": "id1_tipVideo",
         "tipNb": 4,
         "maxTipNb": 20,
     },
