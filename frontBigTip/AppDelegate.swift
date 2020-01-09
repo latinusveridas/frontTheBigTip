@@ -10,7 +10,6 @@ import UIKit
 
 let sharedpreviewData = SharedPreviewData.shared
 let shareduserData = SharedUserData.shared
-let sharedAPITapSessions = SharedTapSessionAPI.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Current user initialization
         shareduserData.getCurrentUser()
         
-        // Fetching TapSessions from API
-        sharedAPITapSessions.getTapSessionList()
-                
+        //Cast for testing previewDict elements
+        var list: [Preview?] = sharedpreviewData.PreviewDict.map{$0.value}
+        print(list.count)
+        
         return true
     }
 

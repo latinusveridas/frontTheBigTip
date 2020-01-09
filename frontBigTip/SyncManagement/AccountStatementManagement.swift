@@ -11,13 +11,10 @@ import UIKit
 
 class AccountStatementManagement {
 /* Manage the synchronisation of the local Account Statements and the API */
-/* Sync are manual and automatic */
+/* Sync are manual and/or automatic */
     
     var SyncTimer = Timer()
     var countdown : Double
-    
-    var LocalAccountStatement: Account!
-    var APIAccountStatement: Account!
     
     static var shared = AccountStatementManagement()
     private init() {
@@ -47,10 +44,25 @@ class AccountStatementManagement {
     
     /* MANUAL SYNCHRONIZATION */
     func syncAccountEventssWithApi() {
-        
+        // 0. Get API Account Object
+        var APIAccount: Account = fetchAPIAccount()
+    
+        // 1. Sync RefillList to increase account
         
         
     }
+    
+    func fetchAPIAccount() -> Account {
+        let url = Bundle.main.url(forResource: "DRAFTAPIAccountStatement", withExtension: "json")!
+        guard let data = try? Data(contentsOf: url) else { fatalError("Impossible to read the file") }
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let account = try? decoder.decode(Account.self, from: data) else { fatalError("Impossible to parse Json to Preview")}
+        return account
+    }
+    
+    func testRefillArrays(array1: [refillList], array2: [refillList])
     
     
 }

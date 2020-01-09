@@ -1,12 +1,47 @@
-[
-    {
-        "accountDrawdownId": "drawdown1",
-        "user": "user1",
-        "tapSession": {
-            
+{
+    "userId": "userId1",
+    "refillList": [
+        {
+          "accountRefillId": "accountRefillId1",
+          "userId": "userId1",
+          "date": "2013-07-21T19:32:00Z",
+          "cashAmount": 10,
+          "coinsAmount": 100,
         },
-    },
-    {
-        
-    }
-]
+        {
+          "accountRefillId": "accountRefillId2",
+          "userId": "userId1",
+          "date": "2013-07-21T19:32:00Z",
+          "cashAmount": 15,
+          "coinsAmount": 150,            
+        },
+                {
+          "accountRefillId": "accountRefillId3",
+          "userId": "userId1",
+          "date": "2014-07-21T19:32:00Z",
+          "cashAmount": 19,
+          "coinsAmount": 190,            
+        },
+    ],
+    "drawdownList": [
+        {
+          "accountDrawdownId": "accountDrawdownId1"
+          "userId": "userId1"
+          "date": "2013-07-21T19:32:00Z"
+          "tapSessionId": "tapSessionId1"
+          "tipNb": 17
+          "coinPrice": 1
+          "totalCoinsDrawdown": 17
+        },
+        {
+          "accountDrawdownId": "accountDrawdownId2"
+          "userId": "userId1"
+          "date": "2013-07-21T19:32:00Z"
+          "tapSessionId": "tapSessionId1"
+          "tipNb": 20
+          "coinPrice": 1
+          "totalCoinsDrawdown": 20
+        },
+    ],
+    "coinsAvailable": 200
+}

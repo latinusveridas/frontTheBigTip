@@ -15,7 +15,7 @@ class User: Codable {
     var followedUserList: [User?]
     var publicName: String!
     
-    enum SuperCodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case userId
         case followedUserList
         case publicName
@@ -28,7 +28,7 @@ class User: Codable {
     }
     
     required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: SuperCodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         self.userId = try container.decode(String.self, forKey: .userId)
         self.followedUserList = try container.decode([User?].self, forKey: .followedUserList)
         self.publicName = try container.decode(String.self, forKey: .publicName)
@@ -94,7 +94,7 @@ class CurrentUser: User {
         self.coinsAvailable = try container.decode(Double.self, forKey: .coinsAvailable)
         self.tipVideoList = try container.decode([TipVideo?]?.self, forKey: .tipVideoList)
         self.tipsList = try container.decode([Tip?]?.self, forKey: .tipsList)
-        try super.init(from: decoder)
+        try super.init(from: container.superDecoder())
     }
     
     

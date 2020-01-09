@@ -31,7 +31,7 @@ class SharedPreviewData {
         let cacheThumbnails = NSCache<NSString, UIImage>()
         cacheThumbnails.name = "Preview Thumbnails Cache"
         
-        for (_, preview)in PreviewDict {
+        for (_, preview) in PreviewDict {
             preview.setThumbnailImageToCache(cache: cacheThumbnails)
         }
         
@@ -58,6 +58,7 @@ class SharedPreviewData {
             guard let previewList = try? decoder.decode([Preview].self, from: data) else { fatalError("Impossible to parse Json to Preview")}
             previewList.forEach { item in 
                 tempDict[item.previewId] = item
+                print("item \(item.previewId)")
             }
             return tempDict
     }

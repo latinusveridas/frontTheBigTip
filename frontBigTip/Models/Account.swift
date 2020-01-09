@@ -11,7 +11,7 @@ import Foundation
 final class Account: Codable {
     
     static let shared = Account()
-    private init() {
+    init() {
         self.userId = shareduserData.currentUser!.userId
         self.coinsAvailable = shareduserData.currentUser!.coinsAvailable
         self.drawdownList = []
