@@ -23,11 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Current user initialization
         shareduserData.getCurrentUser()
-        
-        //Cast for testing previewDict elements
-        var list: [Preview?] = sharedpreviewData.PreviewDict.map{$0.value}
-        print(list.count)
-        
+                
         return true
     }
 

@@ -58,7 +58,6 @@ class SharedPreviewData {
             guard let previewList = try? decoder.decode([Preview].self, from: data) else { fatalError("Impossible to parse Json to Preview")}
             previewList.forEach { item in 
                 tempDict[item.previewId] = item
-                print("item \(item.previewId)")
             }
             return tempDict
     }

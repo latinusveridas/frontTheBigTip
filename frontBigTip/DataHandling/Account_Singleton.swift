@@ -13,7 +13,7 @@ class SharedAccount {
 /* This class represent the shared User Account */
 /* Type method are used as we do not instance an object, we directly use the type property */
     
-    var Account: Account?
+    var account: Account?
     
     static let shared = SharedAccount()
     private init() {    }
@@ -22,7 +22,7 @@ class SharedAccount {
         let data = loadJSONfile(url: url)
         let account = parsingJSONtoAccount(data: data)
 
-        self.PreviewDict = previewDict
+        self.account = account
     }
     
     fileprivate func loadJSONfile(url: String) -> Data {
@@ -39,7 +39,6 @@ class SharedAccount {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             guard let account = try? decoder.decode(Account.self, from: data) else { fatalError("Impossible to parse Json to Preview")}
-
             return account
     }
     

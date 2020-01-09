@@ -7,10 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
-final class Account: Codable {
+class Account: Codable {
     
     static let shared = Account()
+
+    let userId: String!
+    var refillList: [AccountRefill?] // A
+    var drawdownList: [AccountDrawdown?] // B
+    var coinsAvailable: Double! // A - B
+    
     init() {
         self.userId = shareduserData.currentUser!.userId
         self.coinsAvailable = shareduserData.currentUser!.coinsAvailable
@@ -18,10 +25,20 @@ final class Account: Codable {
         self.refillList = []
     }
     
-    let userId: String!
-    var refillList: [AccountRefill?] // A
-    var drawdownList: [AccountDrawdown?] // B
-    var coinsAvailable: Double! // A - B
+    enum CodingKeys: String, CodingKey {
+        case userId
+        case refillList
+        case drawdownList
+        case coinsAvailable
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.userId = try container.decode(String.self, forKey: .userId)
+        self.refillList = try container.decode([AccountRefill?].self, forKey: .refillList)
+        self.drawdownList = try container.decode([AccountDrawdown?].self, forKey: .drawdownList)
+        self.coinsAvailable = try container.decode(Double.self, forKey: .coinsAvailable)
+    }
         
     func calculateCoinsAvailable() {
     /* Calculate coinsAvalaible based on accountDrawdowns list & refill List */
@@ -34,11 +51,7 @@ final class Account: Codable {
         }
         self.coinsAvailable = calcCoins
     }
-    
-    func getAccountStatement() {
         
-    }
-    
     
 }
 

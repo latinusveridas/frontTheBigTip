@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0039E4FB23B4CF72004C93C3 /* PreviewPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */; };
+		0047CE8623C7C0A70042EB6C /* video2Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8423C7C0A60042EB6C /* video2Thumb.png */; };
+		0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8523C7C0A70042EB6C /* video1Thumb.png */; };
 		0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */; };
 		006790A123B9366A002F3473 /* PreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006790A023B9366A002F3473 /* PreviewRow.swift */; };
 		0074145823C3B51900C2A594 /* SharedPreviewData_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145423C3B51900C2A594 /* SharedPreviewData_Singleton.swift */; };
 		0074145923C3B51900C2A594 /* CurrentUser_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */; };
-		0074145A23C3B51900C2A594 /* DEPRECATEDTapSessionHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145623C3B51900C2A594 /* DEPRECATEDTapSessionHandling.swift */; };
 		0074145B23C3B51900C2A594 /* Account_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145723C3B51900C2A594 /* Account_Singleton.swift */; };
 		0074146523C3B5BB00C2A594 /* TapSessionTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074145E23C3B5BB00C2A594 /* TapSessionTest.json */; };
 		0074146623C3B5BB00C2A594 /* TipTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074145F23C3B5BB00C2A594 /* TipTest.json */; };
-		0074146723C3B5BB00C2A594 /* DRAFTAPIAccountStatement.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146023C3B5BB00C2A594 /* DRAFTAPIAccountStatement.json */; };
+		0074146723C3B5BB00C2A594 /* APIAccountStatement.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146023C3B5BB00C2A594 /* APIAccountStatement.json */; };
 		0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146223C3B5BB00C2A594 /* Account_State_Launch.json */; };
 		0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146323C3B5BB00C2A594 /* Current_User_Launch.json */; };
 		0074146A23C3B5BB00C2A594 /* Public_Preview_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */; };
@@ -28,18 +29,18 @@
 		0094124623B12D4D0034780B /* frontBigTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094124523B12D4D0034780B /* frontBigTipUITests.swift */; };
 		00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
 		00BD7E5423B7411E00DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
-		00BD7E5523B7411E00DA6EB4 /* User_and_SubClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* User_and_SubClasses.swift */; };
+		00BD7E5523B7411E00DA6EB4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* Users.swift */; };
 		00BD7E5623B749F500DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
 		00BD7E5723B749F500DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
-		00BD7E5823B749F500DA6EB4 /* User_and_SubClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* User_and_SubClasses.swift */; };
+		00BD7E5823B749F500DA6EB4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* Users.swift */; };
 		00BD7E5923B749F500DA6EB4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00BD7E5A23B749F500DA6EB4 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
 		00BD7E5C23B749F600DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
 		00BD7E5D23B749F600DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
-		00BD7E5E23B749F600DA6EB4 /* User_and_SubClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* User_and_SubClasses.swift */; };
+		00BD7E5E23B749F600DA6EB4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* Users.swift */; };
 		00BD7E5F23B749F600DA6EB4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00BD7E6023B749F600DA6EB4 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
-		00C3939A23BFCE6500EC9401 /* AccountEvent_SubClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3939923BFCE6500EC9401 /* AccountEvent_SubClasses.swift */; };
+		00C3939A23BFCE6500EC9401 /* Account_Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3939923BFCE6500EC9401 /* Account_Events.swift */; };
 		00C79DD123C11BE6009ACF62 /* AccountStatementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C79DD023C11BE6009ACF62 /* AccountStatementManagement.swift */; };
 		00C79DD323C11E84009ACF62 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C79DD223C11E84009ACF62 /* Account.swift */; };
 		00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
@@ -70,15 +71,16 @@
 
 /* Begin PBXFileReference section */
 		0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPresentation.swift; sourceTree = "<group>"; };
+		0047CE8423C7C0A60042EB6C /* video2Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video2Thumb.png; sourceTree = "<group>"; };
+		0047CE8523C7C0A70042EB6C /* video1Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video1Thumb.png; sourceTree = "<group>"; };
 		0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		006790A023B9366A002F3473 /* PreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRow.swift; sourceTree = "<group>"; };
 		0074145423C3B51900C2A594 /* SharedPreviewData_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedPreviewData_Singleton.swift; sourceTree = "<group>"; };
 		0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser_Singleton.swift; sourceTree = "<group>"; };
-		0074145623C3B51900C2A594 /* DEPRECATEDTapSessionHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DEPRECATEDTapSessionHandling.swift; sourceTree = "<group>"; };
 		0074145723C3B51900C2A594 /* Account_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account_Singleton.swift; sourceTree = "<group>"; };
 		0074145E23C3B5BB00C2A594 /* TapSessionTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapSessionTest.json; sourceTree = "<group>"; };
 		0074145F23C3B5BB00C2A594 /* TipTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TipTest.json; sourceTree = "<group>"; };
-		0074146023C3B5BB00C2A594 /* DRAFTAPIAccountStatement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DRAFTAPIAccountStatement.json; sourceTree = "<group>"; };
+		0074146023C3B5BB00C2A594 /* APIAccountStatement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APIAccountStatement.json; sourceTree = "<group>"; };
 		0074146223C3B5BB00C2A594 /* Account_State_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account_State_Launch.json; sourceTree = "<group>"; };
 		0074146323C3B5BB00C2A594 /* Current_User_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Current_User_Launch.json; sourceTree = "<group>"; };
 		0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Public_Preview_Launch.json; sourceTree = "<group>"; };
@@ -96,8 +98,8 @@
 		0094124723B12D4D0034780B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BD7E5023B7411E00DA6EB4 /* TapSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapSession.swift; sourceTree = "<group>"; };
 		00BD7E5123B7411E00DA6EB4 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
-		00BD7E5223B7411E00DA6EB4 /* User_and_SubClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_and_SubClasses.swift; sourceTree = "<group>"; };
-		00C3939923BFCE6500EC9401 /* AccountEvent_SubClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEvent_SubClasses.swift; sourceTree = "<group>"; };
+		00BD7E5223B7411E00DA6EB4 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		00C3939923BFCE6500EC9401 /* Account_Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account_Events.swift; sourceTree = "<group>"; };
 		00C79DD023C11BE6009ACF62 /* AccountStatementManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStatementManagement.swift; sourceTree = "<group>"; };
 		00C79DD223C11E84009ACF62 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		00DEEEAA23B27B270063C145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,12 +146,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00532EDE23C7A35C0056FFF9 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
 		0074145323C3B51900C2A594 /* DataHandling */ = {
 			isa = PBXGroup;
 			children = (
 				0074145423C3B51900C2A594 /* SharedPreviewData_Singleton.swift */,
 				0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */,
-				0074145623C3B51900C2A594 /* DEPRECATEDTapSessionHandling.swift */,
 				0074145723C3B51900C2A594 /* Account_Singleton.swift */,
 			);
 			path = DataHandling;
@@ -158,8 +166,9 @@
 		0074145C23C3B5BB00C2A594 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				00532EDE23C7A35C0056FFF9 /* Deprecated */,
 				0074145D23C3B5BB00C2A594 /* Object_Testing */,
-				0074146023C3B5BB00C2A594 /* DRAFTAPIAccountStatement.json */,
+				0074146023C3B5BB00C2A594 /* APIAccountStatement.json */,
 				0074146123C3B5BB00C2A594 /* App_Launch_Syncing */,
 			);
 			path = Ressources;
@@ -177,6 +186,8 @@
 		0074146123C3B5BB00C2A594 /* App_Launch_Syncing */ = {
 			isa = PBXGroup;
 			children = (
+				0047CE8523C7C0A70042EB6C /* video1Thumb.png */,
+				0047CE8423C7C0A60042EB6C /* video2Thumb.png */,
 				0074146223C3B5BB00C2A594 /* Account_State_Launch.json */,
 				0074146323C3B5BB00C2A594 /* Current_User_Launch.json */,
 				0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */,
@@ -211,7 +222,7 @@
 			children = (
 				0074145C23C3B5BB00C2A594 /* Ressources */,
 				0074145323C3B51900C2A594 /* DataHandling */,
-				00C79DCF23C11BC3009ACF62 /* SyncManagement */,
+				00C79DCF23C11BC3009ACF62 /* Sync_Management */,
 				0094122323B12D4B0034780B /* AppDelegate.swift */,
 				0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */,
 				006790A023B9366A002F3473 /* PreviewRow.swift */,
@@ -253,21 +264,21 @@
 			path = frontBigTipUITests;
 			sourceTree = "<group>";
 		};
-		00C79DCF23C11BC3009ACF62 /* SyncManagement */ = {
+		00C79DCF23C11BC3009ACF62 /* Sync_Management */ = {
 			isa = PBXGroup;
 			children = (
 				00C79DD023C11BE6009ACF62 /* AccountStatementManagement.swift */,
 			);
-			path = SyncManagement;
+			path = Sync_Management;
 			sourceTree = "<group>";
 		};
 		00DEEEAB23B27C890063C145 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				00DEEEAC23B27CF00063C145 /* TipVideo.swift */,
-				00C3939923BFCE6500EC9401 /* AccountEvent_SubClasses.swift */,
+				00C3939923BFCE6500EC9401 /* Account_Events.swift */,
 				00C79DD223C11E84009ACF62 /* Account.swift */,
-				00BD7E5223B7411E00DA6EB4 /* User_and_SubClasses.swift */,
+				00BD7E5223B7411E00DA6EB4 /* Users.swift */,
 				00BD7E5023B7411E00DA6EB4 /* TapSession.swift */,
 				00BD7E5123B7411E00DA6EB4 /* Tip.swift */,
 				00DEEEAD23B27CF00063C145 /* Preview.swift */,
@@ -421,9 +432,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */,
+				0047CE8623C7C0A70042EB6C /* video2Thumb.png in Resources */,
+				0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */,
 				0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */,
 				0094123023B12D4D0034780B /* LaunchScreen.storyboard in Resources */,
-				0074146723C3B5BB00C2A594 /* DRAFTAPIAccountStatement.json in Resources */,
+				0074146723C3B5BB00C2A594 /* APIAccountStatement.json in Resources */,
 				0074146A23C3B5BB00C2A594 /* Public_Preview_Launch.json in Resources */,
 				0074146623C3B5BB00C2A594 /* TipTest.json in Resources */,
 				0074146523C3B5BB00C2A594 /* TapSessionTest.json in Resources */,
@@ -558,17 +571,16 @@
 				0094122423B12D4B0034780B /* AppDelegate.swift in Sources */,
 				0074145B23C3B51900C2A594 /* Account_Singleton.swift in Sources */,
 				00BD7E5423B7411E00DA6EB4 /* Tip.swift in Sources */,
-				0074145A23C3B51900C2A594 /* DEPRECATEDTapSessionHandling.swift in Sources */,
 				00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */,
 				0074145823C3B51900C2A594 /* SharedPreviewData_Singleton.swift in Sources */,
 				00C79DD323C11E84009ACF62 /* Account.swift in Sources */,
 				00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */,
 				00DEEEAF23B27CF00063C145 /* Preview.swift in Sources */,
 				00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */,
-				00C3939A23BFCE6500EC9401 /* AccountEvent_SubClasses.swift in Sources */,
+				00C3939A23BFCE6500EC9401 /* Account_Events.swift in Sources */,
 				0094122623B12D4B0034780B /* SceneDelegate.swift in Sources */,
 				0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */,
-				00BD7E5523B7411E00DA6EB4 /* User_and_SubClasses.swift in Sources */,
+				00BD7E5523B7411E00DA6EB4 /* Users.swift in Sources */,
 				0039E4FB23B4CF72004C93C3 /* PreviewPresentation.swift in Sources */,
 				006790A123B9366A002F3473 /* PreviewRow.swift in Sources */,
 				00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */,
@@ -581,7 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00BD7E5823B749F500DA6EB4 /* User_and_SubClasses.swift in Sources */,
+				00BD7E5823B749F500DA6EB4 /* Users.swift in Sources */,
 				00BD7E5723B749F500DA6EB4 /* Tip.swift in Sources */,
 				00BD7E5923B749F500DA6EB4 /* Preview.swift in Sources */,
 				00BD7E5A23B749F500DA6EB4 /* TipVideo.swift in Sources */,
@@ -594,7 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00BD7E5E23B749F600DA6EB4 /* User_and_SubClasses.swift in Sources */,
+				00BD7E5E23B749F600DA6EB4 /* Users.swift in Sources */,
 				00BD7E5D23B749F600DA6EB4 /* Tip.swift in Sources */,
 				00BD7E5F23B749F600DA6EB4 /* Preview.swift in Sources */,
 				00BD7E6023B749F600DA6EB4 /* TipVideo.swift in Sources */,

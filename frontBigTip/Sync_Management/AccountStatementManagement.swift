@@ -53,7 +53,7 @@ class AccountStatementManagement {
     }
     
     func fetchAPIAccount() -> Account {
-        let url = Bundle.main.url(forResource: "DRAFTAPIAccountStatement", withExtension: "json")!
+        let url = Bundle.main.url(forResource: "APIAccountStatement", withExtension: "json")!
         guard let data = try? Data(contentsOf: url) else { fatalError("Impossible to read the file") }
         
         let decoder = JSONDecoder()
@@ -61,8 +61,6 @@ class AccountStatementManagement {
         guard let account = try? decoder.decode(Account.self, from: data) else { fatalError("Impossible to parse Json to Preview")}
         return account
     }
-    
-    func testRefillArrays(array1: [refillList], array2: [refillList])
     
     
 }

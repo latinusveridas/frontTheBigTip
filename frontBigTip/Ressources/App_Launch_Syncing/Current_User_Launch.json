@@ -5,6 +5,8 @@
     "publicName": "QuentinLaLegende",
     "email": "qdprivatemail@gmail.com",
     "password": "azerty",
-    "coinsAvailable": 200,
     "jwt": "testJwt",
+    "tipVideoList" : [],
+    "tipsList": [],
+    "coinsAvailable": 200,
 }
