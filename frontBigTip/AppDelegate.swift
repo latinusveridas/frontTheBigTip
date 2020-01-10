@@ -9,7 +9,7 @@
 import UIKit
 
 let sharedpreviewData = SharedPreviewData.shared
-let shareduserData = SharedUserData.shared
+let sharedUserData = SharedUserData.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sharedpreviewData.cacheAllThumbnails()
         
         // Current user initialization
-        shareduserData.getCurrentUser()
+        sharedUserData.getCurrentUser()
                 
         return true
     }
