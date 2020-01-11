@@ -36,8 +36,8 @@ class SharedAccount {
     fileprivate func parsingJSONtoAccount(data: Data) -> Account {
     /* Serialize JSON to List of Preview objects */
             
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
             
         do {
             let account = try decoder.decode(Account.self, from: data)

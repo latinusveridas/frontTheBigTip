@@ -25,7 +25,7 @@ final class AccountDrawdown: AccountEvent, Codable, Equatable {
     var tipVideoId: String!
     var tipNb: Int!
     var coinPrice: Int!
-    var totalCoinsDrawdown: Double! //{ Double( coinPrice * tipNb) }
+    var totalCoinsDrawdown: Double! { Double( coinPrice * tipNb) }
     
     enum CodingKeys: String, CodingKey {
         case accountDrawdownId
@@ -35,7 +35,6 @@ final class AccountDrawdown: AccountEvent, Codable, Equatable {
         case tipVideoId
         case tipNb
         case coinPrice
-        case totalCoinsDrawdown
     }
     
     init(accountDrawdownId: String, userId: String!, date: Date! , tapSessionId: String!, tipVideoId: String!, tipNb: Int!, coinPrice: Int!) {
@@ -59,7 +58,6 @@ final class AccountDrawdown: AccountEvent, Codable, Equatable {
         self.tipVideoId = try container.decode(String.self, forKey: .tipVideoId)
         self.tipNb = try container.decode(Int.self, forKey: .tipNb)
         self.coinPrice = try container.decode(Int.self, forKey: .coinPrice)
-        self.totalCoinsDrawdown = try container.decode(Double.self, forKey: .totalCoinsDrawdown)
     }
 }
 
