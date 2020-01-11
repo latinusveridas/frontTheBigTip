@@ -10,6 +10,7 @@ import UIKit
 
 let sharedpreviewData = SharedPreviewData.shared
 let sharedUserData = SharedUserData.shared
+let sharedAccountData = SharedAccount.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Current user initialization
         sharedUserData.getCurrentUser()
-                
+        
+        // Account initialization
+        sharedAccountData.getAccountStatement(url: "Account_State_Launch")
+        
+        // Testing Account update, we update refillList
+        print("On start, nb of refills is \(sharedAccountData.account!.refillList.count)")
+        
+        // Testing account sync
+        AccountStatementManagement.shared.syncAccountEventssWithApi()
+        print("After sync, nb of refills is \(sharedAccountData.account!.refillList.count)")
+        
         return true
     }
 

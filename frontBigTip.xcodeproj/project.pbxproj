@@ -17,7 +17,7 @@
 		0074145B23C3B51900C2A594 /* Account_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145723C3B51900C2A594 /* Account_Singleton.swift */; };
 		0074146523C3B5BB00C2A594 /* TapSessionTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074145E23C3B5BB00C2A594 /* TapSessionTest.json */; };
 		0074146623C3B5BB00C2A594 /* TipTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074145F23C3B5BB00C2A594 /* TipTest.json */; };
-		0074146723C3B5BB00C2A594 /* APIAccountStatement.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146023C3B5BB00C2A594 /* APIAccountStatement.json */; };
+		0074146723C3B5BB00C2A594 /* Account_API_Statement.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146023C3B5BB00C2A594 /* Account_API_Statement.json */; };
 		0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146223C3B5BB00C2A594 /* Account_State_Launch.json */; };
 		0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146323C3B5BB00C2A594 /* Current_User_Launch.json */; };
 		0074146A23C3B5BB00C2A594 /* Public_Preview_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */; };
@@ -47,6 +47,7 @@
 		00DEEEAF23B27CF00063C145 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEED23B287EE0063C145 /* SessionManagement.swift */; };
 		00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEEE23B287EE0063C145 /* DataHandling.swift */; };
+		00F293DF23CA11CC00BDF68A /* File in Resources */ = {isa = PBXBuildFile; fileRef = 00F293DE23CA11CC00BDF68A /* File */; };
 		055B959FB8FDC4FC6D495D10 /* Pods_frontBigTipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AD1406B6CD56B368329FC1 /* Pods_frontBigTipTests.framework */; };
 		2F8E6E1ED85F3441DDB1771D /* Pods_frontBigTip_frontBigTipUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7351ECC3651B0C5EBAAA5E53 /* Pods_frontBigTip_frontBigTipUITests.framework */; };
 		B0231F235A2741EF681DED5A /* Pods_frontBigTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A158C623FF16A7A6A0D7B708 /* Pods_frontBigTip.framework */; };
@@ -80,7 +81,7 @@
 		0074145723C3B51900C2A594 /* Account_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account_Singleton.swift; sourceTree = "<group>"; };
 		0074145E23C3B5BB00C2A594 /* TapSessionTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapSessionTest.json; sourceTree = "<group>"; };
 		0074145F23C3B5BB00C2A594 /* TipTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TipTest.json; sourceTree = "<group>"; };
-		0074146023C3B5BB00C2A594 /* APIAccountStatement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APIAccountStatement.json; sourceTree = "<group>"; };
+		0074146023C3B5BB00C2A594 /* Account_API_Statement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account_API_Statement.json; sourceTree = "<group>"; };
 		0074146223C3B5BB00C2A594 /* Account_State_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account_State_Launch.json; sourceTree = "<group>"; };
 		0074146323C3B5BB00C2A594 /* Current_User_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Current_User_Launch.json; sourceTree = "<group>"; };
 		0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Public_Preview_Launch.json; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		00DEEEAD23B27CF00063C145 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preview.swift; path = frontBigTip/Models/Preview.swift; sourceTree = SOURCE_ROOT; };
 		00DEEEED23B287EE0063C145 /* SessionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagement.swift; sourceTree = "<group>"; };
 		00DEEEEE23B287EE0063C145 /* DataHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandling.swift; sourceTree = "<group>"; };
+		00F293DE23CA11CC00BDF68A /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		14AD1406B6CD56B368329FC1 /* Pods_frontBigTipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frontBigTipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABB7E4674470043D71B346E /* Pods-frontBigTip-frontBigTipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontBigTip-frontBigTipUITests.release.xcconfig"; path = "Target Support Files/Pods-frontBigTip-frontBigTipUITests/Pods-frontBigTip-frontBigTipUITests.release.xcconfig"; sourceTree = "<group>"; };
 		30399530EDB9D66AC12FD4E5 /* Pods-frontBigTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontBigTip.release.xcconfig"; path = "Target Support Files/Pods-frontBigTip/Pods-frontBigTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		00532EDE23C7A35C0056FFF9 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				00F293DE23CA11CC00BDF68A /* File */,
 			);
 			path = Deprecated;
 			sourceTree = "<group>";
@@ -168,7 +171,7 @@
 			children = (
 				00532EDE23C7A35C0056FFF9 /* Deprecated */,
 				0074145D23C3B5BB00C2A594 /* Object_Testing */,
-				0074146023C3B5BB00C2A594 /* APIAccountStatement.json */,
+				00F293DD23C9F5DF00BDF68A /* App_OnGoing_Sync */,
 				0074146123C3B5BB00C2A594 /* App_Launch_Syncing */,
 			);
 			path = Ressources;
@@ -294,6 +297,14 @@
 			);
 			path = Network;
 			sourceTree = SOURCE_ROOT;
+		};
+		00F293DD23C9F5DF00BDF68A /* App_OnGoing_Sync */ = {
+			isa = PBXGroup;
+			children = (
+				0074146023C3B5BB00C2A594 /* Account_API_Statement.json */,
+			);
+			path = App_OnGoing_Sync;
+			sourceTree = "<group>";
 		};
 		3F95E9ACC5672AD4A1D204E0 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -436,7 +447,8 @@
 				0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */,
 				0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */,
 				0094123023B12D4D0034780B /* LaunchScreen.storyboard in Resources */,
-				0074146723C3B5BB00C2A594 /* APIAccountStatement.json in Resources */,
+				0074146723C3B5BB00C2A594 /* Account_API_Statement.json in Resources */,
+				00F293DF23CA11CC00BDF68A /* File in Resources */,
 				0074146A23C3B5BB00C2A594 /* Public_Preview_Launch.json in Resources */,
 				0074146623C3B5BB00C2A594 /* TipTest.json in Resources */,
 				0074146523C3B5BB00C2A594 /* TapSessionTest.json in Resources */,

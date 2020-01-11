@@ -45,29 +45,29 @@ class AccountStatementManagement {
     /* MANUAL SYNCHRONIZATION */
     func syncAccountEventssWithApi() {
     
-    var bucketDDnewInAPI: [Drawdown?]
-    var bucketDDnewInLocal: [Drawdown?]
-    var bucketDDcommon: [Drawdown?]
-    
-    var bucketRnewInAPI: [Refill?]
-    var bucketRnewInLocal: [Refill?]
-    var bucketRcommon: [Refill?]
+        var bucketDDnewInAPI: [AccountDrawdown?]
+        var bucketDDnewInLocal: [AccountDrawdown?]
+        var bucketDDcommon: [AccountDrawdown?]
+        
+        var bucketRnewInAPI: [AccountRefill?]
+        var bucketRnewInLocal: [AccountRefill?]
+        var bucketRcommon: [AccountRefill?]
     
         // 0. Get API Account Object
-        var apiAccount: Account = fetchAPIAccount()
-        var userAccount: Account = shareduserData.currentUser!
+        let apiAccount: Account = fetchAPIAccount()
+        let userAccount: Account = SharedAccount.shared.account!
     
         // 1. Sync RefillList to increase account
         let RefillResult = CompareArrays(APIarray: apiAccount.refillList, Localarray: userAccount.refillList)
         bucketRnewInAPI = RefillResult.bucketNewInAPI
         bucketRnewInLocal = RefillResult.bucketNewInLocal
-        bucketRcommon = RefillList.bucketCommon
+        bucketRcommon = RefillResult.bucketCommon
         
         // 2. Sync Drawdown to decrease account
         let DrawDownResult = CompareArrays(APIarray: apiAccount.drawdownList, Localarray: userAccount.drawdownList)
-        bucketRnewInAPI = DrawDownResult.bucketNewInAPI
-        bucketRnewInLocal = DrawDownResult.bucketNewInLocal
-        bucketRcommon = DrawDownResult.bucketCommon
+        bucketDDnewInAPI = DrawDownResult.bucketNewInAPI
+        bucketDDnewInLocal = DrawDownResult.bucketNewInLocal
+        bucketDDcommon = DrawDownResult.bucketCommon
         
         // 3. Update local data
         userAccount.refillList = userAccount.refillList + bucketRnewInAPI
@@ -77,8 +77,8 @@ class AccountStatementManagement {
         
     }
     
-    func FetchAPIAccount() -> Account {
-        let url = Bundle.main.url(forResource: "APIAccountStatement", withExtension: "json")!
+    func fetchAPIAccount() -> Account {
+        let url = Bundle.main.url(forResource: "Account_API_Statement", withExtension: "json")!
         guard let data = try? Data(contentsOf: url) else { fatalError("Impossible to read the file") }
         
         let decoder = JSONDecoder()
@@ -87,11 +87,11 @@ class AccountStatementManagement {
         return account
     }
     
-    func CompareArrays(APIarray: [], Localarray: []) -> (bucketNewInAPI: [], bucketNewInLocal: [], bucketCommon: []) {
+    func CompareArrays<T: Equatable>(APIarray: [T], Localarray: [T]) -> (bucketNewInAPI: [T], bucketNewInLocal: [T], bucketCommon: [T]) {
     
-    var bucketNewInAPI = []
-    var bucketNewInLocal = []
-    var bucketCommon = []
+        var bucketNewInAPI: [T] = []
+        var bucketNewInLocal: [T] = []
+        var bucketCommon:  [T] = []
     
         APIarray.forEach { 
             if Localarray.contains($0) {
@@ -111,7 +111,7 @@ class AccountStatementManagement {
         return (bucketNewInAPI, bucketNewInLocal, bucketCommon)
     }
     
-    func RefreshAPIaccount(refillList: [Refill?]!, drawdownList: [Drawdown?]!) {
+    func RefreshAPIaccount(refillList: [AccountRefill?]!, drawdownList: [AccountDrawdown?]!) {
         
     }
     

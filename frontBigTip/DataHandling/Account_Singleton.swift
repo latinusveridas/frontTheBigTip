@@ -21,7 +21,7 @@ class SharedAccount {
     func getAccountStatement(url: String!) {
         let data = loadJSONfile(url: url)
         let account = parsingJSONtoAccount(data: data)
-
+        
         self.account = account
     }
     
@@ -38,8 +38,16 @@ class SharedAccount {
             
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            guard let account = try? decoder.decode(Account.self, from: data) else { fatalError("Impossible to parse Json to Preview")}
+            
+        do {
+            let account = try decoder.decode(Account.self, from: data)
+            print("Launch Account state successfully loaded :)")
             return account
+        } catch {
+            print(error)
+            fatalError()
+        }
+        
     }
     
 }

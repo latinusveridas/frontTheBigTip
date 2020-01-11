@@ -19,8 +19,8 @@ class Account: Codable {
     var coinsAvailable: Double! // A - B
     
     init() {
-        self.userId = shareduserData.currentUser!.userId
-        self.coinsAvailable = shareduserData.currentUser!.coinsAvailable
+        self.userId = sharedUserData.currentUser!.userId
+        self.coinsAvailable = sharedUserData.currentUser!.coinsAvailable
         self.drawdownList = []
         self.refillList = []
     }
