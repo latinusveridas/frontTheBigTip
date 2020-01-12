@@ -12,7 +12,7 @@ import SwiftUI
 let tipVideoDict = sharedtipVideoData.TipVideoDict
 let tipVideoList = tipVideoDict.map{$0.value}
 
-struct PreviewPresentation: View {
+struct HomePage: View {
 
     var body: some View {
         
@@ -28,8 +28,8 @@ struct PreviewPresentation: View {
 }
 
 
-struct PreviewPresentation_Previews: PreviewProvider {
+struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-            PreviewPresentation()
+            HomePage()
     }
 }

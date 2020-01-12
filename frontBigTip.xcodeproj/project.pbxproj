@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0039E4FB23B4CF72004C93C3 /* PreviewPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */; };
+		0039E4FB23B4CF72004C93C3 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4FA23B4CF72004C93C3 /* HomePage.swift */; };
 		0047CE8623C7C0A70042EB6C /* video2Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8423C7C0A60042EB6C /* video2Thumb.png */; };
 		0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8523C7C0A70042EB6C /* video1Thumb.png */; };
 		0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */; };
@@ -74,7 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPresentation.swift; sourceTree = "<group>"; };
+		0039E4FA23B4CF72004C93C3 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		0047CE8423C7C0A60042EB6C /* video2Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video2Thumb.png; sourceTree = "<group>"; };
 		0047CE8523C7C0A70042EB6C /* video1Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video1Thumb.png; sourceTree = "<group>"; };
 		0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 				0074145323C3B51900C2A594 /* DataHandling */,
 				00C79DCF23C11BC3009ACF62 /* Sync_Management */,
 				0094122323B12D4B0034780B /* AppDelegate.swift */,
-				0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */,
+				0039E4FA23B4CF72004C93C3 /* HomePage.swift */,
 				006790A023B9366A002F3473 /* PreviewRow.swift */,
 				00E01DC823CA3D7600FE5144 /* TipVideoDetail.swift */,
 				00E01DCA23CA44BF00FE5144 /* UI_Elements */,
@@ -623,7 +623,7 @@
 				00E01DCC23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift in Sources */,
 				0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */,
 				00BD7E5523B7411E00DA6EB4 /* Users.swift in Sources */,
-				0039E4FB23B4CF72004C93C3 /* PreviewPresentation.swift in Sources */,
+				0039E4FB23B4CF72004C93C3 /* HomePage.swift in Sources */,
 				006790A123B9366A002F3473 /* PreviewRow.swift in Sources */,
 				00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */,
 				0074145923C3B51900C2A594 /* CurrentUser_Singleton.swift in Sources */,
