@@ -1,0 +1,13 @@
+{
+    "tipVideoId":"dogTipVideoId",
+    "previewId":"dogPreviewId",
+    "authorName":"user1",
+    "authorId":"quentinId",
+    "maxTipNb": 20,
+    "priceTip": 1,
+    "tipNb": 0,
+    "totalTipsNb": 4000,
+    "totalIncome": 6000,
+    "maxSize": 10,
+    "currentSize": 1,
+}

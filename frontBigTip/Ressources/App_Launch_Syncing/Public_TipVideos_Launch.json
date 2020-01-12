@@ -1,0 +1,26 @@
+[
+    {
+        "tipVideoId": "dogTipVideoId",
+        "authorId": "user1",
+        "authorName": "Quentin",
+        "thumbnailLink": "dogThumbnail",
+        "tipNb": 4,
+        "priceTip": 5,
+        "maxTipNb": 20,
+        "maxSize": 100,
+        "currentSize": 10,
+        "tipsList": [],
+    },
+    {
+        "tipVideoId": "longinesTipVideoId",
+        "authorId": "user2",
+        "authorName": "Katia",
+        "thumbnailLink": "longinesThumbnail",
+        "tipNb": 5,
+        "priceTip": 5,
+        "maxTipNb": 40,
+        "maxSize": 100,
+        "currentSize": 10,
+        "tipsList": [],
+    }
+]

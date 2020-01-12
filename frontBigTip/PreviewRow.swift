@@ -10,17 +10,17 @@ import Foundation
 import SwiftUI
 
 struct PreviewRow : View {
-    var preview: Preview
+    var tipVideo: TipVideo
     
-    let sharedThumbCache = sharedpreviewData.ThumbnailCache
+    let sharedThumbCache = sharedtipVideoData.ThumbnailCache
     
     var body: some View {
         HStack {
             Image(uiImage:
-                sharedThumbCache.object(forKey: preview.previewId as NSString)!)
+                sharedThumbCache.object(forKey: tipVideo.tipVideoId as NSString)!)
                 .resizable()
                 .frame(width: 50, height: 50)
-            Text(preview.authorName)
+            Text(tipVideo.tipVideoId)
         }
     }
     
@@ -29,8 +29,7 @@ struct PreviewRow : View {
 struct PreviewRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        PreviewRow(preview: previewList[0])
-        //PreviewRow(preview: previewList[1]!)
+        PreviewRow(tipVideo: tipVideoList[0])
         }
 
             .previewLayout(.fixed(width: 300, height: 70))

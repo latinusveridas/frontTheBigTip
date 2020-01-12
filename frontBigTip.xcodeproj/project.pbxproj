@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8523C7C0A70042EB6C /* video1Thumb.png */; };
 		0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */; };
 		006790A123B9366A002F3473 /* PreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006790A023B9366A002F3473 /* PreviewRow.swift */; };
-		0074145823C3B51900C2A594 /* SharedPreviewData_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145423C3B51900C2A594 /* SharedPreviewData_Singleton.swift */; };
+		0074145823C3B51900C2A594 /* SharedTipVideoData_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145423C3B51900C2A594 /* SharedTipVideoData_Singleton.swift */; };
 		0074145923C3B51900C2A594 /* CurrentUser_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */; };
 		0074145B23C3B51900C2A594 /* Account_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074145723C3B51900C2A594 /* Account_Singleton.swift */; };
 		0074146523C3B5BB00C2A594 /* TapSessionTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074145E23C3B5BB00C2A594 /* TapSessionTest.json */; };
@@ -20,7 +20,7 @@
 		0074146723C3B5BB00C2A594 /* Account_API_Statement.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146023C3B5BB00C2A594 /* Account_API_Statement.json */; };
 		0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146223C3B5BB00C2A594 /* Account_State_Launch.json */; };
 		0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146323C3B5BB00C2A594 /* Current_User_Launch.json */; };
-		0074146A23C3B5BB00C2A594 /* Public_Preview_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */; };
+		0074146A23C3B5BB00C2A594 /* Public_TipVideos_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146423C3B5BB00C2A594 /* Public_TipVideos_Launch.json */; };
 		0094122423B12D4B0034780B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094122323B12D4B0034780B /* AppDelegate.swift */; };
 		0094122623B12D4B0034780B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094122523B12D4B0034780B /* SceneDelegate.swift */; };
 		0094122D23B12D4D0034780B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0094122C23B12D4D0034780B /* Preview Assets.xcassets */; };
@@ -33,20 +33,23 @@
 		00BD7E5623B749F500DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
 		00BD7E5723B749F500DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
 		00BD7E5823B749F500DA6EB4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* Users.swift */; };
-		00BD7E5923B749F500DA6EB4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00BD7E5A23B749F500DA6EB4 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
 		00BD7E5C23B749F600DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
 		00BD7E5D23B749F600DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
 		00BD7E5E23B749F600DA6EB4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* Users.swift */; };
-		00BD7E5F23B749F600DA6EB4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00BD7E6023B749F600DA6EB4 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
 		00C3939A23BFCE6500EC9401 /* Account_Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3939923BFCE6500EC9401 /* Account_Events.swift */; };
 		00C79DD123C11BE6009ACF62 /* AccountStatementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C79DD023C11BE6009ACF62 /* AccountStatementManagement.swift */; };
 		00C79DD323C11E84009ACF62 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C79DD223C11E84009ACF62 /* Account.swift */; };
 		00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
-		00DEEEAF23B27CF00063C145 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAD23B27CF00063C145 /* Preview.swift */; };
 		00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEED23B287EE0063C145 /* SessionManagement.swift */; };
 		00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEEE23B287EE0063C145 /* DataHandling.swift */; };
+		00E01DC423CA359E00FE5144 /* dogThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E01DC223CA359E00FE5144 /* dogThumbnail.png */; };
+		00E01DC723CA38BA00FE5144 /* longinesThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E01DC623CA38BA00FE5144 /* longinesThumbnail.png */; };
+		00E01DC923CA3D7600FE5144 /* TipVideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E01DC823CA3D7600FE5144 /* TipVideoDetail.swift */; };
+		00E01DCC23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E01DCB23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift */; };
+		00E01DCF23CA458300FE5144 /* VideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 00E01DCE23CA458300FE5144 /* VideoPlayer */; };
+		00E01DD523CA54FF00FE5144 /* dogTipVideo.json in Resources */ = {isa = PBXBuildFile; fileRef = 00E01DD423CA54FF00FE5144 /* dogTipVideo.json */; };
 		00F293DF23CA11CC00BDF68A /* File in Resources */ = {isa = PBXBuildFile; fileRef = 00F293DE23CA11CC00BDF68A /* File */; };
 		055B959FB8FDC4FC6D495D10 /* Pods_frontBigTipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AD1406B6CD56B368329FC1 /* Pods_frontBigTipTests.framework */; };
 		2F8E6E1ED85F3441DDB1771D /* Pods_frontBigTip_frontBigTipUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7351ECC3651B0C5EBAAA5E53 /* Pods_frontBigTip_frontBigTipUITests.framework */; };
@@ -76,7 +79,7 @@
 		0047CE8523C7C0A70042EB6C /* video1Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video1Thumb.png; sourceTree = "<group>"; };
 		0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		006790A023B9366A002F3473 /* PreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRow.swift; sourceTree = "<group>"; };
-		0074145423C3B51900C2A594 /* SharedPreviewData_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedPreviewData_Singleton.swift; sourceTree = "<group>"; };
+		0074145423C3B51900C2A594 /* SharedTipVideoData_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTipVideoData_Singleton.swift; sourceTree = "<group>"; };
 		0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser_Singleton.swift; sourceTree = "<group>"; };
 		0074145723C3B51900C2A594 /* Account_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account_Singleton.swift; sourceTree = "<group>"; };
 		0074145E23C3B5BB00C2A594 /* TapSessionTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapSessionTest.json; sourceTree = "<group>"; };
@@ -84,7 +87,7 @@
 		0074146023C3B5BB00C2A594 /* Account_API_Statement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account_API_Statement.json; sourceTree = "<group>"; };
 		0074146223C3B5BB00C2A594 /* Account_State_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account_State_Launch.json; sourceTree = "<group>"; };
 		0074146323C3B5BB00C2A594 /* Current_User_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Current_User_Launch.json; sourceTree = "<group>"; };
-		0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Public_Preview_Launch.json; sourceTree = "<group>"; };
+		0074146423C3B5BB00C2A594 /* Public_TipVideos_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Public_TipVideos_Launch.json; sourceTree = "<group>"; };
 		0094122023B12D4B0034780B /* frontBigTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontBigTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0094122323B12D4B0034780B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0094122523B12D4B0034780B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +108,15 @@
 		00C79DD223C11E84009ACF62 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		00DEEEAA23B27B270063C145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00DEEEAC23B27CF00063C145 /* TipVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipVideo.swift; path = frontBigTip/Models/TipVideo.swift; sourceTree = SOURCE_ROOT; };
-		00DEEEAD23B27CF00063C145 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preview.swift; path = frontBigTip/Models/Preview.swift; sourceTree = SOURCE_ROOT; };
 		00DEEEED23B287EE0063C145 /* SessionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagement.swift; sourceTree = "<group>"; };
 		00DEEEEE23B287EE0063C145 /* DataHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandling.swift; sourceTree = "<group>"; };
+		00E01DC023CA351D00FE5144 /* dog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog.mp4; sourceTree = "<group>"; };
+		00E01DC123CA351D00FE5144 /* longines.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = longines.mp4; sourceTree = "<group>"; };
+		00E01DC223CA359E00FE5144 /* dogThumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogThumbnail.png; sourceTree = "<group>"; };
+		00E01DC623CA38BA00FE5144 /* longinesThumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longinesThumbnail.png; sourceTree = "<group>"; };
+		00E01DC823CA3D7600FE5144 /* TipVideoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipVideoDetail.swift; sourceTree = "<group>"; };
+		00E01DCB23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMPTYPlayerTipVideo.swift; sourceTree = "<group>"; };
+		00E01DD423CA54FF00FE5144 /* dogTipVideo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dogTipVideo.json; sourceTree = "<group>"; };
 		00F293DE23CA11CC00BDF68A /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		14AD1406B6CD56B368329FC1 /* Pods_frontBigTipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frontBigTipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABB7E4674470043D71B346E /* Pods-frontBigTip-frontBigTipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontBigTip-frontBigTipUITests.release.xcconfig"; path = "Target Support Files/Pods-frontBigTip-frontBigTipUITests/Pods-frontBigTip-frontBigTipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0231F235A2741EF681DED5A /* Pods_frontBigTip.framework in Frameworks */,
+				00E01DCF23CA458300FE5144 /* VideoPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +169,7 @@
 		0074145323C3B51900C2A594 /* DataHandling */ = {
 			isa = PBXGroup;
 			children = (
-				0074145423C3B51900C2A594 /* SharedPreviewData_Singleton.swift */,
+				0074145423C3B51900C2A594 /* SharedTipVideoData_Singleton.swift */,
 				0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */,
 				0074145723C3B51900C2A594 /* Account_Singleton.swift */,
 			);
@@ -193,7 +203,11 @@
 				0047CE8423C7C0A60042EB6C /* video2Thumb.png */,
 				0074146223C3B5BB00C2A594 /* Account_State_Launch.json */,
 				0074146323C3B5BB00C2A594 /* Current_User_Launch.json */,
-				0074146423C3B5BB00C2A594 /* Public_Preview_Launch.json */,
+				0074146423C3B5BB00C2A594 /* Public_TipVideos_Launch.json */,
+				00E01DC023CA351D00FE5144 /* dog.mp4 */,
+				00E01DC123CA351D00FE5144 /* longines.mp4 */,
+				00E01DC223CA359E00FE5144 /* dogThumbnail.png */,
+				00E01DC623CA38BA00FE5144 /* longinesThumbnail.png */,
 			);
 			path = App_Launch_Syncing;
 			sourceTree = "<group>";
@@ -229,6 +243,8 @@
 				0094122323B12D4B0034780B /* AppDelegate.swift */,
 				0039E4FA23B4CF72004C93C3 /* PreviewPresentation.swift */,
 				006790A023B9366A002F3473 /* PreviewRow.swift */,
+				00E01DC823CA3D7600FE5144 /* TipVideoDetail.swift */,
+				00E01DCA23CA44BF00FE5144 /* UI_Elements */,
 				0050ACAA23BE79A900AEDC88 /* SwiftUIView.swift */,
 				0094122523B12D4B0034780B /* SceneDelegate.swift */,
 				0094122E23B12D4D0034780B /* LaunchScreen.storyboard */,
@@ -284,7 +300,6 @@
 				00BD7E5223B7411E00DA6EB4 /* Users.swift */,
 				00BD7E5023B7411E00DA6EB4 /* TapSession.swift */,
 				00BD7E5123B7411E00DA6EB4 /* Tip.swift */,
-				00DEEEAD23B27CF00063C145 /* Preview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,10 +313,19 @@
 			path = Network;
 			sourceTree = SOURCE_ROOT;
 		};
+		00E01DCA23CA44BF00FE5144 /* UI_Elements */ = {
+			isa = PBXGroup;
+			children = (
+				00E01DCB23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift */,
+			);
+			path = UI_Elements;
+			sourceTree = "<group>";
+		};
 		00F293DD23C9F5DF00BDF68A /* App_OnGoing_Sync */ = {
 			isa = PBXGroup;
 			children = (
 				0074146023C3B5BB00C2A594 /* Account_API_Statement.json */,
+				00E01DD423CA54FF00FE5144 /* dogTipVideo.json */,
 			);
 			path = App_OnGoing_Sync;
 			sourceTree = "<group>";
@@ -348,6 +372,7 @@
 			);
 			name = frontBigTip;
 			packageProductDependencies = (
+				00E01DCE23CA458300FE5144 /* VideoPlayer */,
 			);
 			productName = frontBigTip;
 			productReference = 0094122023B12D4B0034780B /* frontBigTip.app */;
@@ -425,6 +450,7 @@
 			);
 			mainGroup = 0094121723B12D4A0034780B;
 			packageReferences = (
+				00E01DCD23CA458300FE5144 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
 			);
 			productRefGroup = 0094122123B12D4B0034780B /* Products */;
 			projectDirPath = "";
@@ -442,17 +468,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E01DC423CA359E00FE5144 /* dogThumbnail.png in Resources */,
 				0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */,
 				0047CE8623C7C0A70042EB6C /* video2Thumb.png in Resources */,
 				0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */,
 				0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */,
+				00E01DC723CA38BA00FE5144 /* longinesThumbnail.png in Resources */,
 				0094123023B12D4D0034780B /* LaunchScreen.storyboard in Resources */,
 				0074146723C3B5BB00C2A594 /* Account_API_Statement.json in Resources */,
 				00F293DF23CA11CC00BDF68A /* File in Resources */,
-				0074146A23C3B5BB00C2A594 /* Public_Preview_Launch.json in Resources */,
+				0074146A23C3B5BB00C2A594 /* Public_TipVideos_Launch.json in Resources */,
 				0074146623C3B5BB00C2A594 /* TipTest.json in Resources */,
 				0074146523C3B5BB00C2A594 /* TapSessionTest.json in Resources */,
 				0094122D23B12D4D0034780B /* Preview Assets.xcassets in Resources */,
+				00E01DD523CA54FF00FE5144 /* dogTipVideo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,13 +613,14 @@
 				0074145B23C3B51900C2A594 /* Account_Singleton.swift in Sources */,
 				00BD7E5423B7411E00DA6EB4 /* Tip.swift in Sources */,
 				00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */,
-				0074145823C3B51900C2A594 /* SharedPreviewData_Singleton.swift in Sources */,
+				00E01DC923CA3D7600FE5144 /* TipVideoDetail.swift in Sources */,
+				0074145823C3B51900C2A594 /* SharedTipVideoData_Singleton.swift in Sources */,
 				00C79DD323C11E84009ACF62 /* Account.swift in Sources */,
 				00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */,
-				00DEEEAF23B27CF00063C145 /* Preview.swift in Sources */,
 				00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */,
 				00C3939A23BFCE6500EC9401 /* Account_Events.swift in Sources */,
 				0094122623B12D4B0034780B /* SceneDelegate.swift in Sources */,
+				00E01DCC23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift in Sources */,
 				0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */,
 				00BD7E5523B7411E00DA6EB4 /* Users.swift in Sources */,
 				0039E4FB23B4CF72004C93C3 /* PreviewPresentation.swift in Sources */,
@@ -607,7 +637,6 @@
 			files = (
 				00BD7E5823B749F500DA6EB4 /* Users.swift in Sources */,
 				00BD7E5723B749F500DA6EB4 /* Tip.swift in Sources */,
-				00BD7E5923B749F500DA6EB4 /* Preview.swift in Sources */,
 				00BD7E5A23B749F500DA6EB4 /* TipVideo.swift in Sources */,
 				00BD7E5623B749F500DA6EB4 /* TapSession.swift in Sources */,
 				0094123B23B12D4D0034780B /* frontBigTipTests.swift in Sources */,
@@ -620,7 +649,6 @@
 			files = (
 				00BD7E5E23B749F600DA6EB4 /* Users.swift in Sources */,
 				00BD7E5D23B749F600DA6EB4 /* Tip.swift in Sources */,
-				00BD7E5F23B749F600DA6EB4 /* Preview.swift in Sources */,
 				00BD7E6023B749F600DA6EB4 /* TipVideo.swift in Sources */,
 				00BD7E5C23B749F600DA6EB4 /* TapSession.swift in Sources */,
 				0094124623B12D4D0034780B /* frontBigTipUITests.swift in Sources */,
@@ -938,6 +966,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00E01DCD23CA458300FE5144 /* XCRemoteSwiftPackageReference "VideoPlayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wxxsw/VideoPlayer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00E01DCE23CA458300FE5144 /* VideoPlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00E01DCD23CA458300FE5144 /* XCRemoteSwiftPackageReference "VideoPlayer" */;
+			productName = VideoPlayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0094121823B12D4A0034780B /* Project object */;
 }

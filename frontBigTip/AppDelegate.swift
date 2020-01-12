@@ -8,7 +8,7 @@
 
 import UIKit
 
-let sharedpreviewData = SharedPreviewData.shared
+let sharedtipVideoData = SharedTipVideoData.shared
 let sharedUserData = SharedUserData.shared
 let sharedAccountData = SharedAccount.shared
 
@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
                
         // Preview List initialization
-        sharedpreviewData.getPreviewList()
-        sharedpreviewData.cacheAllThumbnails()
+        sharedtipVideoData.getPreviewList()
+        sharedtipVideoData.cacheAllThumbnails()
         
         // Current user initialization
         sharedUserData.getCurrentUser()
