@@ -14,7 +14,16 @@ struct TipVideoDetail: View {
     
     var tipVideo: TipVideo! // Static Data
     
-    //@ObservedObject private var tipVideoLoader: TipVideoLoader // Loader
+    @ObservedObject private var tipVideoLoader: TipVideoLoader // Loader
+    // End of download, we've got the url of the file
+    
+    @State private var videoUrl: String?
+    
+    @State var isAutoReplay: Bool = true
+    @State var isMute: Bool = false
+    @State var isPlay: Bool = true
+    @State var stateText: String = ""
+    
         
     init(tipVideo: TipVideo) {
         self.tipVideo = tipVideo
@@ -26,20 +35,40 @@ struct TipVideoDetail: View {
         List {
             Text("Author is \(tipVideo.authorName)")
             Text("TipVideoId is \(tipVideo!.tipVideoId)")
+        VideoPlayer(url: videoUrl, isPlay: $isPlay)
+            .autoReplay($isAutoReplay)
+            .mute($isMute)
+            .onPlayToEndTime { print("onPlayToEndTime") }
+            .onReplay { print("onReplay") }
+            .onStateChanged { state in
+                switch state {
+                case .none:
+                    self.stateText = "None"
+                case .loading:
+                    self.stateText = "Loading..."
+                case .playing:
+                    self.stateText = "Playing!"
+                case .paused(_, let playProgress, let bufferProgress):
+                    self.stateText = "Paused: play \(Int(playProgress * 100))% buffer \(Int(bufferProgress * 100))%"
+                case .error(let error):
+                    self.stateText = "Error: \(error)"
+                }
+            }
+            .onReceive(TipVideoLoader.didChange) { url in
+                self.VideoPlayer = VideoPlayer(url: url)
+            }
         }
     }
 }
 
 class TipVideoLoader: ObservableObject {
-    @Published var tipVideo: TipVideo
+    @Published var url: String?
 
     init(tipVideoId: String) {
-        let url = Bundle.main.url(forResource: "dogTipVideo", withExtension: "json")!
-        guard let data = try? Data(contentsOf: url) else { fatalError("Impossible to read the file") }
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let tipvideo = try? decoder.decode(TipVideo.self, from: data) else { fatalError("Impossible to parse Json to Preview")}
-        self.tipVideo = tipvideo
+    // Get tipVideo Thumbnail link 
+    // Check if not already downloaded
+    // Download if applicable
+    // Return link
     }
 }
 
@@ -70,21 +99,11 @@ class TipVideoLoader: ObservableObject {
 //                    self.stateText = "Error: \(error)"
 //                }
 //            }
+//          .onReceive(TipVideoLoader.didChange) { url in
+            //     self.VideoPlayer = VideoPlayer(url: url)
+            // }
 
 
-//struct StargazersView: View {
-//    var stargazers:[User] = []
-//
-//    var body: some View {
-//        List(stargazers) { stargazer in
-//            HStack {
-//                ImageView(withURL: stargazer.avatarUrl)
-//                Text(stargazer.login)
-//            }
-//        }
-//    }
-//}
-//
 //struct ImageView: View {
 //    @ObservedObject var imageLoader:ImageLoader
 //    @State var image:UIImage = UIImage()
@@ -119,3 +138,17 @@ class TipVideoLoader: ObservableObject {
 //        task.resume()
 //    }
 //}
+
+//struct StargazersView: View {
+//    var stargazers:[User] = []
+//
+//    var body: some View {
+//        List(stargazers) { stargazer in
+//            HStack {
+//                ImageView(withURL: stargazer.avatarUrl)
+//                Text(stargazer.login)
+//            }
+//        }
+//    }
+//}
+//
