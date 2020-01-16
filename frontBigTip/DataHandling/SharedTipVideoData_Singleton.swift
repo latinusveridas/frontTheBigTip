@@ -50,6 +50,7 @@ class SharedTipVideoData {
                 } else { // Do Nothing}
             }
         }
+        }
     }
 }
 
@@ -80,10 +81,10 @@ extension SharedTipVideoData {
             print("TipVideos successfully loaded :)")
             return tempDict
         } catch  {
-            
             print(error)
             fatalError()
         }
-    }    
+    }
     
 }
+

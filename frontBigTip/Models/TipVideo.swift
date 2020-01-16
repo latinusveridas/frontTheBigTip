@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class TipVideo: Codable, Hashable {
+class TipVideo: Codable, Hashable, ObservableObject {
 /* Represent a video object */
 
     // Static data
@@ -69,6 +69,12 @@ extension TipVideo {
         return "test"
     }
     
+    func stringToURL() -> URL? {
+        guard let strLink =  self.tipVideoLocalLink else { return nil }
+        let url = URL(fileURLWithPath: strLink)
+        return url
+    }
+    
     // MARK: - Image Management
     
     func thumbnailDataToImage() -> UIImage? {
@@ -95,28 +101,32 @@ extension TipVideo {
     }
     
     // MARK: - Video Management
-    
-    func downloadTipVideo() {
-        guard let remoteLink = self.tipVideoRemoteLink else {  }
-     
+
+    func getTipVideo(completionHandler: (String)) -> String? {
+    // Returns the local url of the video, if not exists, launch the download
+        
+        if let localLink = self.tipVideoLocalLink {
+            let fileManager = FileManager.default
+            if !fileManager.fileExists(atPath: localLink) {
+            // File does not exists so download
+                downloadTipVideo() { localUrl in
+                    return localUrl
+                }
+            } else { // File exists
+                return localLink
+            }
+        } else {
+        // File is not downloaded, launch download
+            downloadTipVideo { localUrl in
+                return localUrl
+            }
+        }
+        return ""
     }
     
-    func getTipVideo() -> String! {
-        guard let localLink = self.tipVideoLocalLink else { 
-        // File is not downloaded, launch download
-            downloadTipVideo()
-        }
-        
-        // Check if file exists
-        let fileManager = FileManager.default()
-        
-        if !fileExists(atPath path: link) {
-            // File does not exists so download
-            downloadTipVideo()
-        } else {
-            return localLink
-        }
-        
+    private func downloadTipVideo(completionHandler: @escaping (String) -> Void) {
+        guard let remoteLink = self.tipVideoRemoteLink else { print("No Remote Link !") ; return  }
+        // TO BE COMPLETED
     }
     
 }

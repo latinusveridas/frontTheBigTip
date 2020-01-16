@@ -24,7 +24,7 @@ class StoredData {
     }
     
     func storeTipVideoLink_Auto(tipVideo: TipVideo) {
-        let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink, .Automatic)
+        let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, .Automatic)
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
         defaults.set(storedData, forKey: "storedTipVideoLinks")
@@ -44,7 +44,7 @@ class StoredVideo: Codable {
     var tipVideoLocalLink: String!
     var mode: Mode
     
-    enum Mode {
+    enum Mode: String, Codable {
         case Manual
         case Automatic
     }

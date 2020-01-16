@@ -27,6 +27,7 @@
 		0094123023B12D4D0034780B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0094122E23B12D4D0034780B /* LaunchScreen.storyboard */; };
 		0094123B23B12D4D0034780B /* frontBigTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094123A23B12D4D0034780B /* frontBigTipTests.swift */; };
 		0094124623B12D4D0034780B /* frontBigTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094124523B12D4D0034780B /* frontBigTipUITests.swift */; };
+		00B1607523D0D1F40012FC2D /* StoredData_Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B1607423D0D1F40012FC2D /* StoredData_Singleton.swift */; };
 		00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5023B7411E00DA6EB4 /* TapSession.swift */; };
 		00BD7E5423B7411E00DA6EB4 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5123B7411E00DA6EB4 /* Tip.swift */; };
 		00BD7E5523B7411E00DA6EB4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7E5223B7411E00DA6EB4 /* Users.swift */; };
@@ -100,6 +101,7 @@
 		0094124123B12D4D0034780B /* frontBigTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = frontBigTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0094124523B12D4D0034780B /* frontBigTipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frontBigTipUITests.swift; sourceTree = "<group>"; };
 		0094124723B12D4D0034780B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00B1607423D0D1F40012FC2D /* StoredData_Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredData_Singleton.swift; sourceTree = "<group>"; };
 		00BD7E5023B7411E00DA6EB4 /* TapSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapSession.swift; sourceTree = "<group>"; };
 		00BD7E5123B7411E00DA6EB4 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		00BD7E5223B7411E00DA6EB4 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				0074145423C3B51900C2A594 /* SharedTipVideoData_Singleton.swift */,
 				0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */,
 				0074145723C3B51900C2A594 /* Account_Singleton.swift */,
+				00B1607423D0D1F40012FC2D /* StoredData_Singleton.swift */,
 			);
 			path = DataHandling;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */,
 				00E01DC923CA3D7600FE5144 /* TipVideoDetail.swift in Sources */,
 				0074145823C3B51900C2A594 /* SharedTipVideoData_Singleton.swift in Sources */,
+				00B1607523D0D1F40012FC2D /* StoredData_Singleton.swift in Sources */,
 				00C79DD323C11E84009ACF62 /* Account.swift in Sources */,
 				00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */,
 				00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */,
