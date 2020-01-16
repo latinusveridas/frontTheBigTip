@@ -41,6 +41,20 @@ class SharedTipVideoData {
             
     }
     
+    func RectifyWithLocalStoredData() {
+        let storedData: [String : StoredVideo]  = StoredData.shared.fetchDictionnary()
+        for (sharedId, sharedTipVideo) in self.TipVideoDict {
+            for (storedId, storedVideo) in storedData {
+                if sharedId == storedId {
+                    sharedTipVideo.tipVideoLocalLink = storedVideo.tipVideoLocalLink
+                } else { // Do Nothing}
+            }
+        }
+    }
+}
+
+extension SharedTipVideoData {
+
     fileprivate func loadJSONfile(url: String) -> Data {
     /* Load File to Data */
     
@@ -70,6 +84,6 @@ class SharedTipVideoData {
             print(error)
             fatalError()
         }
-    }
+    }    
     
 }

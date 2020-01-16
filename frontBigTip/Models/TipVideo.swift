@@ -32,6 +32,8 @@ class TipVideo: Codable, Hashable {
     var totalIncome: Double! { Double(totalTipsNb * priceTip) }
     
     // Video data
+    var tipVideoRemoteLink: String!
+    var tipVideoLocalLink: String?
     var maxSize: Double!
     var currentSize: Double!
 
@@ -67,6 +69,8 @@ extension TipVideo {
         return "test"
     }
     
+    // MARK: - Image Management
+    
     func thumbnailDataToImage() -> UIImage? {
         guard let imageData = self.thumbnailImageData else { return nil }
         let image = UIImage(data: imageData)
@@ -78,7 +82,7 @@ extension TipVideo {
     
         let link = thumbnailLink
         guard let url = Bundle.main.url(forResource: link, withExtension: "png") else {
-            print("URL not found !!! \(String(describing: link))")
+            print("Thumbnail link not found !!! \(String(describing: link))")
             return
         }
         guard let data = try? Data(contentsOf: url) else { fatalError("☠️") }
@@ -88,6 +92,31 @@ extension TipVideo {
             return
         }
         cache.setObject(img, forKey: self.tipVideoId as NSString)
+    }
+    
+    // MARK: - Video Management
+    
+    func downloadTipVideo() {
+        guard let remoteLink = self.tipVideoRemoteLink else {  }
+     
+    }
+    
+    func getTipVideo() -> String! {
+        guard let localLink = self.tipVideoLocalLink else { 
+        // File is not downloaded, launch download
+            downloadTipVideo()
+        }
+        
+        // Check if file exists
+        let fileManager = FileManager.default()
+        
+        if !fileExists(atPath path: link) {
+            // File does not exists so download
+            downloadTipVideo()
+        } else {
+            return localLink
+        }
+        
     }
     
 }
