@@ -41,17 +41,31 @@ class SharedTipVideoData {
             
     }
     
-    func RectifyWithLocalStoredData() {
+    func syncWithLocalStoredData() {
         let storedData: [String : StoredVideo]  = StoredData.shared.fetchDictionnary()
         for (sharedId, sharedTipVideo) in self.TipVideoDict {
             for (storedId, storedVideo) in storedData {
                 if sharedId == storedId {
                     sharedTipVideo.tipVideoLocalLink = storedVideo.tipVideoLocalLink
-                } else { // Do Nothing}
+                    print("tipVideo Local Link with id \(sharedId) has been updated")
+                } else { // Do Nothing }
             }
         }
+    }
+    
+    func syncWithAccount() {
+        let accountDD = sharedAccountData.account.drawdownList
+        accountDD.forEach { DD in
+            for (tipVideoId,tipVideoItem) in self.TipVideoDict {
+                if tipVideoId == accountDD.tipVideoId {
+                    tipVideoItem.tipNb = tipVideoItem.tipNb +  DD.tipNb
+                    print("tipVideo tipNb with id \(tipVideoId), has been updated to \(tipVideoItem.tipNb)")
+                }
+            }
         }
     }
+    
+    
 }
 
 extension SharedTipVideoData {

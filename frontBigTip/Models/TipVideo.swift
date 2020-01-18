@@ -37,7 +37,7 @@ class TipVideo: Codable, Hashable, ObservableObject {
     var maxSize: Double!
     var currentSize: Double!
 
-    init(tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], maxSize: Double, currentSize: Double) {
+    init(tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], maxSize: Double, currentSize: Double, tipVideoRemoteLink: String) {
         self.tipVideoId = tipVideoId
         self.authorName = authorName
         self.authorId = authorId
@@ -47,10 +47,8 @@ class TipVideo: Codable, Hashable, ObservableObject {
         self.tipsList = tipsList
         self.maxSize = maxSize
         self.currentSize = currentSize
+        self.tipVideoRemoteLink = tipVideoRemoteLink
     }
-
-
-    
 }
 
 extension TipVideo {
@@ -104,20 +102,31 @@ extension TipVideo {
 
     func getTipVideo(completionHandler: (String)) -> String? {
     // Returns the local url of the video, if not exists, launch the download
-        
+    
         if let localLink = self.tipVideoLocalLink {
             let fileManager = FileManager.default
             if !fileManager.fileExists(atPath: localLink) {
             // File does not exists so download
+            
                 downloadTipVideo() { localUrl in
+                // Storing local URL to storedTipVideoLinks Userdefault
+                    self.tipVideoLocalLink = localUrl
+                    storeTipVideoLink_Auto(tipVideo: self)
+                    
                     return localUrl
                 }
             } else { // File exists
                 return localLink
             }
+            
         } else {
+        
         // File is not downloaded, launch download
             downloadTipVideo { localUrl in
+            // Storing local URL to storedTipVideoLinks Userdefault
+                self.tipVideoLocalLink = localUrl
+                storeTipVideoLink_Auto(tipVideo: self)
+                
                 return localUrl
             }
         }
