@@ -12,13 +12,25 @@ class Debug_DataStoredInit {
     
     static let shared = Debug_DataStoredInit()
     private init() {
+    
         // Set Dog Local Video
+        
         let storedVideo = StoredVideo("dogTipVideoId", "dog", "Automatic")
+        
         let sharedDataStore = SharedStoredData.shared
+        
         var storedData = sharedDataStore.fetchDictionnary()
+        
+        print("Current number of elements in the storedTipVideoLinks dictionnary: \(storedData.count)")
+        
         storedData["dogTipVideoId"] = storedVideo
         
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: storedData)
+        print("Current number of elements in the storedTipVideoLinks dictionnary: \(storedData.count)")
+        
+        //let encodedData = NSKeyedArchiver.archivedData(withRootObject: storedData)
+        
+        let encodedData = JSONEncoder().encode(storedData)
+        
         sharedDataStore.defaults.set(encodedData, forKey: "storedTipVideoLinks")
         
         // Get Dog Local Video
