@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AccountStatementManagement.shared.syncAccountEventssWithApi()
         print("After sync, nb of refills is \(sharedAccountData.account!.refillList.count)")
         
+        // Testing Stored Data
+        let storeTest = Debug_DataStoredInit.shared
+        
         return true
     }
 

@@ -24,14 +24,14 @@ class SharedStoredData {
     }
     
     func storeTipVideoLink_Auto(tipVideo: TipVideo) {
-        let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, .Automatic)
+        let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, "Automatic")
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
         defaults.set(storedData, forKey: "storedTipVideoLinks")
     }
     
     func storeTipVideoLink_Manual(tipVideo: TipVideo) {
-        let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, .Manual)
+        let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, "Manual")
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
         defaults.set(storedData, forKey: "storedTipVideoLinks")
@@ -49,14 +49,14 @@ class StoredVideo: Codable {
     
     var tipVideoId: String!
     var tipVideoLocalLink: String!
-    var mode: Mode
+    var mode: String!
     
-    enum Mode: String, Codable {
-        case Manual
-        case Automatic
-    }
+//    enum Mode: String, Codable {
+//        case Manual
+//        case Automatic
+//    }
     
-    init(_ tipVideoId: String,_ tipVideoLocalLink: String,_ mode: Mode) {
+    init(_ tipVideoId: String,_ tipVideoLocalLink: String,_ mode: String) {
         self.tipVideoId = tipVideoId
         self.tipVideoLocalLink = tipVideoLocalLink
         self.mode = mode

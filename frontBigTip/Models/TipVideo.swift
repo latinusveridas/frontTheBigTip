@@ -67,7 +67,7 @@ extension TipVideo {
         return "test"
     }
     
-    func stringToURL() -> URL? {
+    func getLocalTipVideoURL() -> URL? {
         guard let strLink =  self.tipVideoLocalLink else { return nil }
         let url = URL(fileURLWithPath: strLink)
         return url
@@ -111,7 +111,7 @@ extension TipVideo {
                 downloadTipVideo() { localUrl in
                 // Storing local URL to storedTipVideoLinks Userdefault
                     self.tipVideoLocalLink = localUrl
-                    storeTipVideoLink_Auto(tipVideo: self)
+                    SharedStoredData.shared.storeTipVideoLink_Auto(tipVideo: self)
                     
                     return localUrl
                 }
@@ -125,7 +125,7 @@ extension TipVideo {
             downloadTipVideo { localUrl in
             // Storing local URL to storedTipVideoLinks Userdefault
                 self.tipVideoLocalLink = localUrl
-                storeTipVideoLink_Auto(tipVideo: self)
+                SharedStoredData.shared.storeTipVideoLink_Auto(tipVideo: self)
                 
                 return localUrl
             }
@@ -133,7 +133,7 @@ extension TipVideo {
         return ""
     }
     
-    private func downloadTipVideo(completionHandler: @escaping (String) -> Void) {
+    private func downloadTipVideo(completionHandler: @escaping (String) -> String) {
         guard let remoteLink = self.tipVideoRemoteLink else { print("No Remote Link !") ; return  }
         // TO BE COMPLETED
     }

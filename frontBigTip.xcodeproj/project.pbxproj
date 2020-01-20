@@ -21,6 +21,7 @@
 		0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146223C3B5BB00C2A594 /* Account_State_Launch.json */; };
 		0074146923C3B5BB00C2A594 /* Current_User_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146323C3B5BB00C2A594 /* Current_User_Launch.json */; };
 		0074146A23C3B5BB00C2A594 /* Public_TipVideos_Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0074146423C3B5BB00C2A594 /* Public_TipVideos_Launch.json */; };
+		007621F523D467320037244E /* DataStored_Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007621F423D467320037244E /* DataStored_Debug.swift */; };
 		0094122423B12D4B0034780B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094122323B12D4B0034780B /* AppDelegate.swift */; };
 		0094122623B12D4B0034780B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0094122523B12D4B0034780B /* SceneDelegate.swift */; };
 		0094122D23B12D4D0034780B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0094122C23B12D4D0034780B /* Preview Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		0074146223C3B5BB00C2A594 /* Account_State_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account_State_Launch.json; sourceTree = "<group>"; };
 		0074146323C3B5BB00C2A594 /* Current_User_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Current_User_Launch.json; sourceTree = "<group>"; };
 		0074146423C3B5BB00C2A594 /* Public_TipVideos_Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Public_TipVideos_Launch.json; sourceTree = "<group>"; };
+		007621F423D467320037244E /* DataStored_Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStored_Debug.swift; sourceTree = "<group>"; };
 		0094122023B12D4B0034780B /* frontBigTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontBigTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0094122323B12D4B0034780B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0094122523B12D4B0034780B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				00E01DC123CA351D00FE5144 /* longines.mp4 */,
 				00E01DC223CA359E00FE5144 /* dogThumbnail.png */,
 				00E01DC623CA38BA00FE5144 /* longinesThumbnail.png */,
+				007621F423D467320037244E /* DataStored_Debug.swift */,
 			);
 			path = App_Launch_Syncing;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				00B1607523D0D1F40012FC2D /* StoredData_Singleton.swift in Sources */,
 				00C79DD323C11E84009ACF62 /* Account.swift in Sources */,
 				00BD7E5323B7411E00DA6EB4 /* TapSession.swift in Sources */,
+				007621F523D467320037244E /* DataStored_Debug.swift in Sources */,
 				00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */,
 				00C3939A23BFCE6500EC9401 /* Account_Events.swift in Sources */,
 				0094122623B12D4B0034780B /* SceneDelegate.swift in Sources */,

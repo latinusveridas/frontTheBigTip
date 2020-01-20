@@ -28,7 +28,7 @@ struct TipVideoDetail: View {
         List {
             Text("Author is \(tipVideo.authorName)")
             Text("TipVideoId is \(tipVideo.tipVideoId)")
-            VideoPlayer(url: .constant(tipVideo.stringToURL()!), isPlay: $isPlay)
+            VideoPlayer(url: .constant(tipVideo.getLocalTipVideoURL()!), isPlay: $isPlay)
             .autoReplay($isAutoReplay)
             .mute($isMute)
             .onPlayToEndTime { print("onPlayToEndTime") }
