@@ -27,8 +27,6 @@ class Debug_DataStoredInit {
         
         print("Current number of elements in the storedTipVideoLinks dictionnary: \(storedData.count)")
         
-        //let encodedData = NSKeyedArchiver.archivedData(withRootObject: storedData)
-        
         let encodedData = JSONEncoder().encode(storedData)
         
         sharedDataStore.defaults.set(encodedData, forKey: "storedTipVideoLinks")

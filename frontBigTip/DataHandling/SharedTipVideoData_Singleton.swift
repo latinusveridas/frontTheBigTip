@@ -19,7 +19,7 @@ class SharedTipVideoData {
     static let shared = SharedTipVideoData()
     private init() {    }
     
-    func getPreviewList() {
+    func getPreviewList() { /* TO BE TRANSLATED FROM LOCAL TO NETWORK */ 
         let data = loadJSONfile(url: "Public_TipVideos_Launch")
         let previewDict = parsingJSONtoTipVideoDict(data: data)
         
@@ -79,7 +79,7 @@ extension SharedTipVideoData {
     }
     
     fileprivate func parsingJSONtoTipVideoDict(data: Data) -> [String:TipVideo] {
-    /* Serialize JSON to List of Preview objects */
+    /* Serialize JSON to List of TipVideo objects */
                     
         var tempDict: [String:TipVideo] = [:]
         let decoder = JSONDecoder()

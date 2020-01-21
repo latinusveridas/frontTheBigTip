@@ -19,28 +19,36 @@ class SharedStoredData {
     private init() {    }
     
     func fetchDictionnary() -> [String : StoredVideo] {
-        guard let dataDict = defaults.object(forKey: "storedTipVideoLinks") as? [String : StoredVideo] else { return [:] }
-        return dataDict
+        guard let dataDict = defaults.object(forKey: "storedTipVideoLinks") as? Data else { return [:] }
+        if let decodedData = JSONDecoder().decode([String:StoredVideo], from: dataDict) {
+            return decodedData    
+        } else {
+            return [:]
+        }
+        
     }
     
     func storeTipVideoLink_Auto(tipVideo: TipVideo) {
         let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, "Automatic")
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
-        defaults.set(storedData, forKey: "storedTipVideoLinks")
+        let encodedData = JSONEncoder().encode(storedData)
+        defaults.set(encodedData, forKey: "storedTipVideoLinks")
     }
     
     func storeTipVideoLink_Manual(tipVideo: TipVideo) {
         let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, "Manual")
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
-        defaults.set(storedData, forKey: "storedTipVideoLinks")
+        let encodedData = JSONEncoder().encode(storedData)
+        defaults.set(encodedData, forKey: "storedTipVideoLinks")
     }
     
     func removeTipVideoLink(tipVideo: TipVideo) {
         var storedData = fetchDictionnary()
         storedData.removeValue(forKey: tipVideo.tipVideoId)
-        defaults.set(storedData, forKey: "storedTipVideoLinks")
+        let encodedData = JSONEncoder().encode(storedData)
+        defaults.set(encodedData, forKey: "storedTipVideoLinks")
     }
     
 }
@@ -63,3 +71,48 @@ class StoredVideo: Codable {
     }
     
 }
+
+///MARK: Additional classes, as File Management
+    
+class TipFileManagement {
+/*
+ * All data stored is stored in a specific folder called BigTip
+ * The automaticaly downloaded videos are saved in a subfolder called "cache"
+ * The manually downloaded videos are saved in a subfolder called "user"
+ *
+ */
+    func readFolder() {
+    // Read the content of the folder and return a list of the content
+    
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+        do {
+        
+            let items = try fm.contentsOfDirectory(atPath: path)
+            
+            for item in items {
+                print("Found \(item)")
+            }
+        } catch let error as NSError  {
+            print(“Unable to read directory”,error)
+        }
+    }
+    
+    func createFolder() {
+    // Create a folder
+    
+    let userDir = FileManager.default.homeDirectoryForCurrentUser
+    let path = Bundle.main.resourcePath!
+    
+    do {
+        try fm.createDirectory(atPath: logsPath!.path, withIntermediateDirectories: true, attributes: nil)
+    
+    } catch let error as NSError{
+    print(“Unable to create directory”,error)
+    }
+    
+    }
+    
+}
+    
+    

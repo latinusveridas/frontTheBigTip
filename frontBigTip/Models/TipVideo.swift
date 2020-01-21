@@ -134,7 +134,13 @@ extension TipVideo {
     }
     
     private func downloadTipVideo(completionHandler: @escaping (String) -> String) {
-        guard let remoteLink = self.tipVideoRemoteLink else { print("No Remote Link !") ; return  }
+    
+        let url = "XXX"
+        let headers = ["Authorization": "jwt"]
+        
+        guard let remoteLink = self.tipVideoRemoteLink else { print("No Remote Link !") ; return }
+        
+        
         // TO BE COMPLETED
     }
     
