@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class SharedStoredData {
 /* This class represent the shared stored TipVideos Links */
@@ -20,7 +21,7 @@ class SharedStoredData {
     
     func fetchDictionnary() -> [String : StoredVideo] {
         guard let dataDict = defaults.object(forKey: "storedTipVideoLinks") as? Data else { return [:] }
-        if let decodedData = JSONDecoder().decode([String:StoredVideo], from: dataDict) {
+        if let decodedData = try! JSONDecoder().decode([String:StoredVideo]?.self, from: dataDict) {
             return decodedData    
         } else {
             return [:]
@@ -32,7 +33,7 @@ class SharedStoredData {
         let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, "Automatic")
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
-        let encodedData = JSONEncoder().encode(storedData)
+        let encodedData = try!  JSONEncoder().encode(storedData)
         defaults.set(encodedData, forKey: "storedTipVideoLinks")
     }
     
@@ -40,14 +41,14 @@ class SharedStoredData {
         let storedVideo = StoredVideo(tipVideo.tipVideoId,tipVideo.tipVideoLocalLink!, "Manual")
         var storedData = fetchDictionnary()
         storedData[tipVideo.tipVideoId] = storedVideo
-        let encodedData = JSONEncoder().encode(storedData)
+        let encodedData = try! JSONEncoder().encode(storedData)
         defaults.set(encodedData, forKey: "storedTipVideoLinks")
     }
     
     func removeTipVideoLink(tipVideo: TipVideo) {
         var storedData = fetchDictionnary()
         storedData.removeValue(forKey: tipVideo.tipVideoId)
-        let encodedData = JSONEncoder().encode(storedData)
+        let encodedData = try! JSONEncoder().encode(storedData)
         defaults.set(encodedData, forKey: "storedTipVideoLinks")
     }
     
@@ -81,36 +82,88 @@ class TipFileManagement {
  * The manually downloaded videos are saved in a subfolder called "user"
  *
  */
-    func readFolder() {
-    // Read the content of the folder and return a list of the content
     
+    let root = "BigTip"
+    let auto = "cache"
+    let user = "user"
+    
+    enum Mode {
+        case automatic
+        case manual
+    }
+    
+    func checkItems(mode: Mode) {
+    // Read the content of the folder and return a list of the content
         let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        do {
+        let docsFolder = try! fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         
-            let items = try fm.contentsOfDirectory(atPath: path)
-            
-            for item in items {
-                print("Found \(item)")
+        let rootURL = docsFolder.appendingPathComponent(root)
+        
+        switch mode {
+        case .automatic:
+            let autoURL = rootURL.appendingPathComponent(auto)
+            let fileURLs = try? fm.contentsOfDirectory(at: autoURL, includingPropertiesForKeys: nil)
+            fileURLs?.forEach { item in
+                print(item)
             }
-        } catch let error as NSError  {
-            print(“Unable to read directory”,error)
+        case .manual:
+            let userURL = rootURL.appendingPathComponent(user)
+            let fileURLs = try? fm.contentsOfDirectory(at: userURL, includingPropertiesForKeys: nil)
+            fileURLs?.forEach { item in
+                print(item)
+            }
         }
     }
     
-    func createFolder() {
-    // Create a folder
-    
-    let userDir = FileManager.default.homeDirectoryForCurrentUser
-    let path = Bundle.main.resourcePath!
-    
-    do {
-        try fm.createDirectory(atPath: logsPath!.path, withIntermediateDirectories: true, attributes: nil)
-    
-    } catch let error as NSError{
-    print(“Unable to create directory”,error)
+    func checkFoldersStructure() {
+        let fileManager = FileManager.default
+        let documentsFolder = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        
+        // Testing root folder
+        let rootURL = documentsFolder.appendingPathComponent(root) // Returns an URL
+        let rootExists: Bool = (try? rootURL.checkResourceIsReachable()) ?? false
+        
+        print("Root is existing ? : \(rootExists)")
+        
+        do {
+            if !rootExists {
+            // Setup of root + two sub folders
+                try fileManager.createDirectory(at: rootURL, withIntermediateDirectories: false)
+                
+                let autoURL = rootURL.appendingPathComponent(auto)
+                try fileManager.createDirectory(at: autoURL, withIntermediateDirectories: false)
+                
+                let userURL = rootURL.appendingPathComponent(user)
+                try fileManager.createDirectory(at: userURL, withIntermediateDirectories: false)
+                
+                print("autoURL exists ?: \(String(describing: try? autoURL.checkResourceIsReachable())) | userURL exists ?: \(String(describing: try? userURL.checkResourceIsReachable()))")
+                
+            } else {
+            // Setup only sub folders
+                let autoURL = rootURL.appendingPathComponent(auto)
+                let userURL = rootURL.appendingPathComponent(user)
+                
+                if (try? autoURL.checkResourceIsReachable()) == false {
+                    try fileManager.createDirectory(at: autoURL, withIntermediateDirectories: false)
+                }
+                
+                if (try? userURL.checkResourceIsReachable()) == false {
+                    try fileManager.createDirectory(at: userURL, withIntermediateDirectories: false)
+                }
+                
+                print("autoURL exists ?: \(try autoURL.checkResourceIsReachable()) | userURL exists ?: \(try userURL.checkResourceIsReachable())")
+                
+            }
+        } catch { print(error) }
     }
     
+    
+    func getDocumentsDirectory() -> URL {
+        // find all possible documents directories for this user
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+
+        // just send back the first one, which ought to be the only one
+        return paths[0]
     }
     
 }

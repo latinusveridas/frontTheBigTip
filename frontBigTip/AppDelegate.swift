@@ -37,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Testing Stored Data
         let storeTest = Debug_DataStoredInit.shared
+        storeTest.writeDogVideoInAutomatic()
+        
+        // Testing File Management
+        TipFileManagement().checkFoldersStructure()
         
         return true
     }

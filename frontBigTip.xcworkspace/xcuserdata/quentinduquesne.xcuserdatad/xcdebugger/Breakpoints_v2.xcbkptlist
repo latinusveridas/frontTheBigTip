@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DD25107C-4CF8-481B-A57E-BFFDD98222A1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frontBigTip/Ressources/App_Launch_Syncing/DataStored_Debug.swift"
@@ -129,6 +129,22 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F00E0FAA-014C-4360-BD02-53BBB46D82F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "frontBigTip/Ressources/App_Launch_Syncing/DataStored_Debug.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "writeDogVideoInAutomatic()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

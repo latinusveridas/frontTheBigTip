@@ -27,7 +27,7 @@ class Debug_DataStoredInit {
         
         print("Current number of elements in the storedTipVideoLinks dictionnary: \(storedData.count)")
         
-        let encodedData = JSONEncoder().encode(storedData)
+        let encodedData = try! JSONEncoder().encode(storedData)
         
         sharedDataStore.defaults.set(encodedData, forKey: "storedTipVideoLinks")
         
@@ -36,6 +36,23 @@ class Debug_DataStoredInit {
         for (id, _) in dict {
             print(id)
         }
+    }
+    
+    func writeDogVideoInAutomatic() {
+        
+        let videoURL = Bundle.main.url(forResource: "dog", withExtension: "mp4")!
+        do {
+            let rawData = try Data(contentsOf: videoURL)
+            
+            let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("auto").appendingPathComponent("TheNewVideo.mp4")
+            
+            try rawData.write(to: newURL)
+            
+        } catch {
+            print(error)
+        }
+        
+        
     }
     
     

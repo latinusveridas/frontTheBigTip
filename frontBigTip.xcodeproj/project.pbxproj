@@ -43,6 +43,7 @@
 		00C3939A23BFCE6500EC9401 /* Account_Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3939923BFCE6500EC9401 /* Account_Events.swift */; };
 		00C79DD123C11BE6009ACF62 /* AccountStatementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C79DD023C11BE6009ACF62 /* AccountStatementManagement.swift */; };
 		00C79DD323C11E84009ACF62 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C79DD223C11E84009ACF62 /* Account.swift */; };
+		00CA49DA23D797B6000D9419 /* dog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 00E01DC023CA351D00FE5144 /* dog.mp4 */; };
 		00DEEEAE23B27CF00063C145 /* TipVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEAC23B27CF00063C145 /* TipVideo.swift */; };
 		00DEEEEF23B287EE0063C145 /* SessionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEED23B287EE0063C145 /* SessionManagement.swift */; };
 		00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEEEEE23B287EE0063C145 /* DataHandling.swift */; };
@@ -474,6 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CA49DA23D797B6000D9419 /* dog.mp4 in Resources */,
 				00E01DC423CA359E00FE5144 /* dogThumbnail.png in Resources */,
 				0074146823C3B5BB00C2A594 /* Account_State_Launch.json in Resources */,
 				0047CE8623C7C0A70042EB6C /* video2Thumb.png in Resources */,
