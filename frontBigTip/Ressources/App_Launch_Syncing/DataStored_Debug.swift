@@ -44,7 +44,10 @@ class Debug_DataStoredInit {
         do {
             let rawData = try Data(contentsOf: videoURL)
             
-            let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("auto").appendingPathComponent("TheNewVideo.mp4")
+            let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                .appendingPathComponent("BigTip")
+                .appendingPathComponent("auto")
+                .appendingPathComponent("TheNewVideo.mp4")
             
             try rawData.write(to: newURL)
             

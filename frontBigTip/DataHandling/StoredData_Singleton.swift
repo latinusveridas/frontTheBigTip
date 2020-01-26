@@ -92,7 +92,7 @@ class TipFileManagement {
         case manual
     }
     
-    func checkItems(mode: Mode) {
+    func checkItemsInTheDirectory(mode: Mode) {
     // Read the content of the folder and return a list of the content
         let fm = FileManager.default
         let docsFolder = try! fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -157,13 +157,57 @@ class TipFileManagement {
         } catch { print(error) }
     }
     
+    func writeDataToFile(data: Data!, fileName: String!, folderMode: Mode) {
     
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
+        let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let rootURL = newURL.appendingPathComponent(root)
+        
+        do {
+        
+            switch folderMode {
+            
+            case: .automatic
+                let targetURL = rootURL.appendingPathComponent(auto)
+                try data.write(to: targetURL, automatically: true)
+            
+            case: .manual
+                let targetURL = rootURL.appendingPathComponent(user)
+                try data.write(to: targetURL, automatically: true)
+                
+            }
+            
+        } catch {
+            print(error)
+        }
+            
+    }
+    
+    func getFileURL(fileName: String!, mode: Mode) -> URL? {
+    
+        let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let rootURL = newURL.appendingPathComponent(root)
+        
+        do {
+        
+            switch folderMode {
+            
+            case: .automatic
+                let modeURL = rootURL.appendingPathComponent(auto)
+                let targetURL = modeURL.appendingPathComponent(fileName)
+                guard let fileExists = try targetURL.checkResourceIsReachable() else { return nil }
+                return targetURL
+            
+            case: .manual
+                let modeURL = rootURL.appendingPathComponent(user)
+                let targetURL = modeURL.appendingPathComponent(fileName)
+                guard let fileExists = try targetURL.checkResourceIsReachable() else { return nil }
+                return targetURL
+                
+            }
+            
+        } catch {
+            print(error)
+        }
     }
     
 }
