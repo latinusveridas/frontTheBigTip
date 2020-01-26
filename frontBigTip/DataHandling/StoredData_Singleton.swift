@@ -123,7 +123,7 @@ class TipFileManagement {
         let rootURL = documentsFolder.appendingPathComponent(root) // Returns an URL
         let rootExists: Bool = (try? rootURL.checkResourceIsReachable()) ?? false
         
-        print("Root is existing ? : \(rootExists)")
+        print("Root exists ?: \(rootExists)")
         
         do {
             if !rootExists {
@@ -166,13 +166,13 @@ class TipFileManagement {
         
             switch folderMode {
             
-            case: .automatic
+            case .automatic:
                 let targetURL = rootURL.appendingPathComponent(auto)
-                try data.write(to: targetURL, automatically: true)
+                try data.write(to: targetURL)
             
-            case: .manual
+            case .manual:
                 let targetURL = rootURL.appendingPathComponent(user)
-                try data.write(to: targetURL, automatically: true)
+                try data.write(to: targetURL)
                 
             }
             
@@ -186,28 +186,28 @@ class TipFileManagement {
     
         let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let rootURL = newURL.appendingPathComponent(root)
-        
-        do {
-        
-            switch folderMode {
+               
+            switch mode {
             
-            case: .automatic
+            case .automatic:
                 let modeURL = rootURL.appendingPathComponent(auto)
                 let targetURL = modeURL.appendingPathComponent(fileName)
-                guard let fileExists = try targetURL.checkResourceIsReachable() else { return nil }
-                return targetURL
+                if (try? targetURL.checkResourceIsReachable()) == true {
+                    return targetURL
+                }
+                
             
-            case: .manual
+            case .manual :
                 let modeURL = rootURL.appendingPathComponent(user)
                 let targetURL = modeURL.appendingPathComponent(fileName)
-                guard let fileExists = try targetURL.checkResourceIsReachable() else { return nil }
-                return targetURL
+                if (try? targetURL.checkResourceIsReachable()) == true {
+                    return targetURL
+                }
                 
             }
-            
-        } catch {
-            print(error)
-        }
+
+        return URL(fileURLWithPath: "")
+        
     }
     
 }

@@ -34,7 +34,7 @@ class Debug_DataStoredInit {
         // Get Dog Local Video
         let dict = sharedDataStore.fetchDictionnary()
         for (id, _) in dict {
-            print(id)
+            print("Item found in UserDefaults, storedTipVideoLinks: \(id)")
         }
     }
     
@@ -46,8 +46,18 @@ class Debug_DataStoredInit {
             
             let newURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
                 .appendingPathComponent("BigTip")
-                .appendingPathComponent("auto")
+                .appendingPathComponent("cache")
                 .appendingPathComponent("TheNewVideo.mp4")
+            
+            // Auto reaching test
+            let autoURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            .appendingPathComponent("BigTip")
+            .appendingPathComponent("cache")
+            if (try? autoURL.checkResourceIsReachable()) == true {
+                print("auto is accessible")
+            } else {
+                print("auto is not accessible")
+            }
             
             try rawData.write(to: newURL)
             
