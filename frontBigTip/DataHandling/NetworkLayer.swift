@@ -12,8 +12,8 @@ import Alamofire
 class BigTipAPI {
         
     enum FilterMode {
-            .relevancy
-            .tailored
+            case relevancy
+            case tailored
     }
     
     
@@ -31,26 +31,23 @@ class BigTipAPI {
             
     }
     
+    var session: Session?
+    
 
 // MARK: Lower network layer, including session management
     
-    // Headers
-    var defaultHeaders = Alamofire.Session.defaultHTTPHeaders
-    defaultHeaders["XXX"] = "XXX"
-    
-    // Configuration
-    let configuration = URLSessionConfiguration.default
-    configuration.httpAdditionalHeaders = defaultHeaders
-  
-    // Request Adapter & Retrier 
-    let accessTokenManager = BigTipTokenAdapter(accessToken: "1234")
-    
-    // Session
-    let session = Alamofire.Session(configuration: configuration)
-    let session = Session(interceptor: BigTipTokenManager)
-  
-    session.request("https://httpbin.org/get")
+    init() {
+        // Headers
+        let header1 = HTTPHeader(name: "header1", value: "xxx")
+        let defaultHeaders = HTTPHeaders([header1])
 
+        // Request Adapter & Retrier
+        let accessTokenManager = BigTipTokenManager(clientID: "xx", baseURLString: "xx", accessToken: "xx", refreshToken: "xx")
+
+        // Session
+        self.session = Session(interceptor: accessTokenManager)
+    }
+    
 }
 
 extension BigTipAPI {
@@ -74,7 +71,6 @@ extension BigTipAPI {
     private var refreshToken: String
 
     private var isRefreshing = false
-    private var requestsToRetry: [RequestRetryCompletion] = []
 
     public init(clientID: String, baseURLString: String, accessToken: String, refreshToken: String) {
         self.clientID = clientID
@@ -87,17 +83,15 @@ extension BigTipAPI {
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(baseURLString) {
             var urlRequest = urlRequest
             urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
-            return urlRequest
+            completion(.success(urlRequest))
         }
 
-        completion(.success(urlRequest))
     }
       
       func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
           lock.lock() ; defer { lock.unlock() }
   
           if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 {
-              requestsToRetry.append(completion)
   
               if !isRefreshing {
                   refreshTokens { [weak self] succeeded, accessToken, refreshToken in
@@ -110,8 +104,6 @@ extension BigTipAPI {
                           strongSelf.refreshToken = refreshToken
                       }
   
-                      strongSelf.requestsToRetry.forEach { $0(.retry) }
-                      strongSelf.requestsToRetry.removeAll()
                   }
               }
           } else {
@@ -286,13 +278,13 @@ enum Router: URLRequestConvertible {
         case .deleteProfile(let userId):
           return "/profile/\(userId)"
             
-        case .uploadTipVideo
+        case .uploadTipVideo:
           return "/tipvideo/"
-        case .getTipVideo
+        case .getTipVideo:
           return "/tipvideo/"
-        case .updateTipVideo
+        case .updateTipVideo:
           return "/tipvideo/"
-        case .deleteTipVideo
+        case .deleteTipVideo:
           return "/tipvideo/"  
           
         case .readUser:
@@ -309,10 +301,10 @@ enum Router: URLRequestConvertible {
 
         switch self {
         
-        case .createUser(let parameters):
+        case .createProfile(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             
-        case .updateUser(_, let parameters):
+        case .updateProfile(_, let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             
         default:

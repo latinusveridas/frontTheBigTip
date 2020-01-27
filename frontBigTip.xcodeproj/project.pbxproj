@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0021DADD23DF7135009921D5 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021DADC23DF7135009921D5 /* NetworkLayer.swift */; };
 		0039E4FB23B4CF72004C93C3 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039E4FA23B4CF72004C93C3 /* HomePage.swift */; };
 		0047CE8623C7C0A70042EB6C /* video2Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8423C7C0A60042EB6C /* video2Thumb.png */; };
 		0047CE8723C7C0A70042EB6C /* video1Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0047CE8523C7C0A70042EB6C /* video1Thumb.png */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0021DADC23DF7135009921D5 /* NetworkLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		0039E4FA23B4CF72004C93C3 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		0047CE8423C7C0A60042EB6C /* video2Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video2Thumb.png; sourceTree = "<group>"; };
 		0047CE8523C7C0A70042EB6C /* video1Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video1Thumb.png; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				0074145423C3B51900C2A594 /* SharedTipVideoData_Singleton.swift */,
 				0074145523C3B51900C2A594 /* CurrentUser_Singleton.swift */,
 				0074145723C3B51900C2A594 /* Account_Singleton.swift */,
+				0021DADC23DF7135009921D5 /* NetworkLayer.swift */,
 				00B1607423D0D1F40012FC2D /* StoredData_Singleton.swift */,
 			);
 			path = DataHandling;
@@ -633,6 +636,7 @@
 				00E01DCC23CA44D800FE5144 /* EMPTYPlayerTipVideo.swift in Sources */,
 				0050ACAB23BE79A900AEDC88 /* SwiftUIView.swift in Sources */,
 				00BD7E5523B7411E00DA6EB4 /* Users.swift in Sources */,
+				0021DADD23DF7135009921D5 /* NetworkLayer.swift in Sources */,
 				0039E4FB23B4CF72004C93C3 /* HomePage.swift in Sources */,
 				006790A123B9366A002F3473 /* PreviewRow.swift in Sources */,
 				00DEEEF023B287EE0063C145 /* DataHandling.swift in Sources */,
