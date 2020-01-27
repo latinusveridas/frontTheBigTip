@@ -73,7 +73,7 @@ class StoredVideo: Codable {
     
 }
 
-///MARK: Additional classes, as File Management
+// MARK: Additional classes, as File Management
     
 class TipFileManagement {
 /*
