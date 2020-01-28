@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 class TipVideo: Codable, Hashable, ObservableObject {
-/* Represent a video object */
+/* Represent a tip video object */
 
     // Static data
     var tipVideoId: String!
@@ -33,11 +33,11 @@ class TipVideo: Codable, Hashable, ObservableObject {
     
     // Video data
     var tipVideoRemoteLink: String!
-    var tipVideoLocalLink: String?
+    @Published var tipVideoLocalLink: String?
     var maxSize: Double!
     var currentSize: Double!
 
-    init(tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], maxSize: Double, currentSize: Double, tipVideoRemoteLink: String) {
+    init(tipVideoId: String, tipNb: Int, authorName: String, authorId: String, maxTip: Int, priceTip: Int, tipsList: [Tip?], maxSize: Double, currentSize: Double, tipVideoRemoteLink: String, tipVideoLocalLink: String?) {
         self.tipVideoId = tipVideoId
         self.authorName = authorName
         self.authorId = authorId
@@ -48,6 +48,7 @@ class TipVideo: Codable, Hashable, ObservableObject {
         self.maxSize = maxSize
         self.currentSize = currentSize
         self.tipVideoRemoteLink = tipVideoRemoteLink
+        self.tipVideoLocalLink = tipVideoLocalLink
     }
 }
 
@@ -100,37 +101,38 @@ extension TipVideo {
     
     // MARK: - Video Management
 
-    func getTipVideo(completionHandler: (String)) -> String? {
+    func getTipVideo() {
     // Returns the local url of the video, if not exists, launch the download
     
         if let localLink = self.tipVideoLocalLink {
             let fileManager = FileManager.default
+            
             if !fileManager.fileExists(atPath: localLink) {
             // File does not exists so download
             
-                downloadTipVideo() { localUrl in
+                downloadTipVideo() { localLink in
                 // Storing local URL to storedTipVideoLinks Userdefault
-                    self.tipVideoLocalLink = localUrl
-                    SharedStoredData.shared.storeTipVideoLink_Auto(tipVideo: self)
                     
-                    return localUrl
+                    SharedStoredData.shared.storeTipVideoLink_Auto(tipVideo: self)
+                    self.tipVideoLocalLink = localLink
+                    
                 }
             } else { // File exists
-                return localLink
+                self.tipVideoLocalLink = localLink
             }
             
         } else {
         
         // File is not downloaded, launch download
-            downloadTipVideo { localUrl in
+            downloadTipVideo { localLink in
             // Storing local URL to storedTipVideoLinks Userdefault
-                self.tipVideoLocalLink = localUrl
+        
                 SharedStoredData.shared.storeTipVideoLink_Auto(tipVideo: self)
+                self.tipVideoLocalLink = localLink
                 
-                return localUrl
             }
         }
-        return ""
+
     }
     
     private func downloadTipVideo(completionHandler: @escaping (String) -> String) {

@@ -19,22 +19,41 @@ struct TipVideoDetail: View {
     @State var isPlay: Bool = true
     @State var stateText: String = ""
         
-    init(tipVideo: TipVideo) {
+    init(/*tipVideo: TipVideo*/) {
+    
+        //self.tipVideo = tipVideo
+        tipVideo = TipVideo(tipVideoId: "xx", tipNb: 0, authorName: "quentin", authorId: "xx", maxTip: 10, priceTip: 5, tipsList: [], maxSize: 10, currentSize: 1, tipVideoRemoteLink: "", tipVideoLocalLink: "xx")
+        
+        let rawURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                .appendingPathComponent("BigTip")
+                .appendingPathComponent("cache")
+                .appendingPathComponent("TheNewVideo.mp4")
+                
+        let strURL = rawURL.absoluteString
+        print("URL of TheNewVideo is \(strURL)")
+        tipVideo.tipVideoLocalLink = strURL
+        
         self.tipVideo = tipVideo
+        
     }
     
     var body: some View {
         
         List {
+        
             Text("Author is \(tipVideo.authorName)")
+            
             Text("TipVideoId is \(tipVideo.tipVideoId)")
+            
             VideoPlayer(url: .constant(tipVideo.getLocalTipVideoURL()!), isPlay: $isPlay)
             .autoReplay($isAutoReplay)
             .mute($isMute)
             .onPlayToEndTime { print("onPlayToEndTime") }
             .onReplay { print("onReplay") }
             .onStateChanged { state in
+            
                 switch state {
+                
                 case .none:
                     self.stateText = "None"
                 case .loading:
