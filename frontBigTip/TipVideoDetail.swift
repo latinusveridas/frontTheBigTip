@@ -19,10 +19,10 @@ struct TipVideoDetail: View {
     @State var isPlay: Bool = true
     @State var stateText: String = ""
         
-    init(/*tipVideo: TipVideo*/) {
+    init(tipVideo2: TipVideo) {
     
         //self.tipVideo = tipVideo
-        tipVideo = TipVideo(tipVideoId: "xx", tipNb: 0, authorName: "quentin", authorId: "xx", maxTip: 10, priceTip: 5, tipsList: [], maxSize: 10, currentSize: 1, tipVideoRemoteLink: "", tipVideoLocalLink: "xx")
+        let tipVideo = TipVideo(tipVideoId: "xx", tipNb: 0, authorName: "quentin", authorId: "xx", maxTip: 10, priceTip: 5, tipsList: [], maxSize: 10, currentSize: 1, tipVideoRemoteLink: "", tipVideoLocalLink: "xx")
         
         let rawURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
                 .appendingPathComponent("BigTip")
@@ -39,13 +39,7 @@ struct TipVideoDetail: View {
     
     var body: some View {
         
-        List {
-        
-            Text("Author is \(tipVideo.authorName)")
-            
-            Text("TipVideoId is \(tipVideo.tipVideoId)")
-            
-            VideoPlayer(url: .constant(tipVideo.getLocalTipVideoURL()!), isPlay: $isPlay)
+        VideoPlayer(url: .constant(tipVideo.getLocalTipVideoURL()!), isPlay: $isPlay)
             .autoReplay($isAutoReplay)
             .mute($isMute)
             .onPlayToEndTime { print("onPlayToEndTime") }
@@ -69,6 +63,6 @@ struct TipVideoDetail: View {
 //            .onReceive(tipVideo.didChange) { url in
 //                self.VideoPlayer = VideoPlayer(url: url, isPlay: $isPlay)
 //            }
-        }
+        
     }
 }

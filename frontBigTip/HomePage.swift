@@ -18,7 +18,7 @@ struct HomePage: View {
         
     NavigationView {
         List(tipVideoList, id: \.self) { elem in
-            NavigationLink(destination: TipVideoDetail(tipVideo: elem)) {
+            NavigationLink(destination: TipVideoDetail(tipVideo2: elem)) {
                 PreviewRow(tipVideo: elem)
             }
         }

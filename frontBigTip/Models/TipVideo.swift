@@ -33,7 +33,7 @@ class TipVideo: Codable, Hashable, ObservableObject {
     
     // Video data
     var tipVideoRemoteLink: String!
-    @Published var tipVideoLocalLink: String?
+    var tipVideoLocalLink: String?
     var maxSize: Double!
     var currentSize: Double!
 
@@ -135,7 +135,7 @@ extension TipVideo {
 
     }
     
-    private func downloadTipVideo(completionHandler: @escaping (String) -> String) {
+    private func downloadTipVideo(completionHandler: @escaping (String) -> Void) {
     
         let url = "XXX"
         let headers = ["Authorization": "jwt"]
